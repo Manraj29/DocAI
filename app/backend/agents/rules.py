@@ -14,10 +14,12 @@ llm = LLM(
 def get_rule_suggester():
     return Agent(
         role="Document Validation Rule Designer",
-        goal="Given the type and content of a document, suggest logical and structural validation rules to ensure the document meets expected format, data completeness, and consistency standards.",
+        goal="Given the type and content of a document, suggest logical and structural validation rules to ensure the document meets expected format, data completeness, and consistency standards. Make sure the rules are practical and can be applied to the document.",
         backstory=("""
             You're an expert in document standards and compliance validation. You analyze the purpose and expected structure of various document types like invoices, receipts, payslips, contracts, bank statements, resumes, and more. You generate practical validation rules that can be applied programmatically to verify if a document contains essential fields, logical dependencies, and structural integrity. These rules are used in automated document processing pipelines to flag incomplete or incorrect documents.
             Be concise but thorough — suggest only useful and relevant rules for the given document.
+                   
+            DO NOT return markdown or wrap JSON in backticks. Only return the JSON. Do not add any explainations or additional text, just return the JSON.
             """
         ),
         allow_delegation=False,

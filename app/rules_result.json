@@ -1,162 +1,159 @@
 ```json
 {
-  "Bank Statement Validation Rules": {
-    "Header Information": {
-      "Bank Name": {
-        "rule": "Must be a non-empty string and match the bank's official name.",
-        "example": "Global Trust Bank"
+  "validation_rules": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "max_length": 100,
+      "regex": "^[a-zA-Z\\s]+$"
+    },
+    "phone": {
+      "type": "string",
+      "required": true,
+      "regex": "^\\+?[1-9][0-9]{7,14}$"
+    },
+    "email": {
+      "type": "string",
+      "required": true,
+      "regex": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+    },
+    "linkedin": {
+      "type": "string",
+      "required": false,
+      "regex": "^https:\\/\\/[a-z]{2,3}\\.linkedin\\.com\\/.*$"
+    },
+    "github": {
+      "type": "string",
+      "required": false,
+      "regex": "^https:\\/\\/github\\.com\\/.*$"
+    },
+    "objective": {
+      "type": "string",
+      "required": false,
+      "max_length": 500
+    },
+    "skills": {
+      "technical": {
+        "type": "array",
+        "required": false,
+        "items": {
+          "type": "string"
+        }
       },
-      "Account Holder Name": {
-        "rule": "Must be a non-empty string representing the account holder's full name.",
-        "example": "John A. Doe"
-      },
-      "Account Holder Address": {
-        "rule": "Must be a valid address format.",
-        "example": "456 Elm St, Apt 12B, Metropolis, NY 10001"
-      },
-      "Statement Period": {
-        "rule": "Start date must be before the end date.",
-        "start_date_field": "Statement Period From",
-        "end_date_field": "Statement Period To"
-      },
-      "Account Branch": {
-        "rule": "Must be a valid branch name.",
-        "example": "Downtown Branch"
-      },
-      "Branch Address": {
-        "rule": "Must be a valid address format.",
-        "example": "123 Market St, Downtown, Metropolis"
-      },
-      "Branch City": {
-        "rule": "Must be a valid city name.",
-        "example": "Metropolis"
-      },
-      "Branch State": {
-        "rule": "Must be a valid state abbreviation.",
-        "example": "NY"
-      },
-      "Branch Phone Number": {
-        "rule": "Must match a valid phone number format.",
-        "example": "(555) 123-4567",
-        "regex": "^\\(\\d{3}\\) \\d{3}-\\d{4}$"
-      },
-      "Currency": {
-        "rule": "Must be a valid currency code.",
-        "example": "USD",
-        "allowed_values": ["USD", "EUR", "GBP"]
-      },
-      "Account Open Date": {
-        "rule": "Must be a valid date format (YYYY-MM-DD) and not in the future.",
-        "format": "YYYY-MM-DD"
-      },
-      "IFSC Code": {
-        "rule": "Must match the standard IFSC code format.",
-        "example": "GTBK0000456",
-        "regex": "^[A-Z]{4}[0-9]{7}$"
-      },
-      "Branch Code": {
-        "rule": "Must be a valid branch code format.",
-        "example": "0456",
-        "regex": "^\\d{4}$"
+      "soft": {
+        "type": "array",
+        "required": false,
+        "items": {
+          "type": "string"
+        }
       }
     },
-    "Transaction Details": {
-      "Date": {
-        "rule": "Must be a valid date format (YYYY-MM-DD) and within the statement period.",
-        "format": "YYYY-MM-DD",
-        "min_date_field": "Statement Period From",
-        "max_date_field": "Statement Period To"
-      },
-      "Value Date": {
-        "rule": "Must be a valid date format (YYYY-MM-DD) and should be on or after the transaction date.",
-        "format": "YYYY-MM-DD",
-        "comparison": "Value Date >= Date"
-      },
-      "Narration": {
-        "rule": "Must be a non-empty string providing a description of the transaction.",
-        "min_length": 3
-      },
-      "Cheque Number": {
-        "rule": "If present, must be a valid cheque number format (numeric).",
-        "regex": "^\\d+$",
-        "conditional": "If transaction type is cheque"
-      },
-      "Withdrawal Amount": {
-        "rule": "Must be a non-negative number. If it's a deposit, this should be null or zero.",
-        "min": 0,
-        "conditional": "If Deposit Amount is null or zero"
-      },
-      "Deposit Amount": {
-        "rule": "Must be a non-negative number. If it's a withdrawal, this should be null or zero.",
-        "min": 0,
-        "conditional": "If Withdrawal Amount is null or zero"
-      },
-      "Closing Balance": {
-        "rule": "Must be a valid number.",
-        "type": "number"
-      },
-       "Transaction Amount Consistency": {
-        "rule": "For each transaction, either 'Withdrawal Amount' or 'Deposit Amount' should have a value, but not both simultaneously (excluding opening/closing balance entries).",
-        "condition": "count(Withdrawal Amount > 0, Deposit Amount > 0) == 1"
-      },
-      "Balance Calculation": {
-        "rule": "Each transaction's closing balance must be equal to the previous closing balance plus the deposit amount minus the withdrawal amount.",
-        "formula": "Closing Balance (current) = Closing Balance (previous) + Deposit Amount (current) - Withdrawal Amount (current)",
-        "apply_to_opening_balance": false
+    "internship_experience": {
+      "type": "array",
+      "required": false,
+      "items": {
+        "type": "object",
+        "properties": {
+          "company": {
+            "type": "string",
+            "required": true
+          },
+          "title": {
+            "type": "string",
+            "required": true
+          },
+          "start_date": {
+            "type": "string",
+            "required": true,
+            "format": "Month Year",
+            "regex": "^(January|February|March|April|May|June|July|August|September|October|November|December)\\s\\d{4}$"
+          },
+          "end_date": {
+            "type": "string",
+            "required": true,
+            "format": "Month Year",
+            "regex": "^(January|February|March|April|May|June|July|August|September|October|November|December)\\s\\d{4}$"
+          },
+          "description": {
+            "type": "string",
+            "required": true
+          }
+        }
       }
     },
-    "Summary Information": {
-      "Generated On": {
-        "rule": "Must be a valid date format (YYYY-MM-DD) and not before the statement period end date.",
-        "format": "YYYY-MM-DD",
-        "min_date_field": "Statement Period To"
-      },
-      "Opening Balance": {
-        "rule": "Must be a valid number and should match the closing balance from the previous statement (if available).",
-        "type": "number"
-      },
-      "Debit Count": {
-        "rule": "Must be a non-negative integer and should match the actual number of debit transactions.",
-        "min": 0,
-        "calculation": "Count of transactions where Withdrawal Amount > 0"
-      },
-      "Credit Count": {
-        "rule": "Must be a non-negative integer and should match the actual number of credit transactions.",
-        "min": 0,
-        "calculation": "Count of transactions where Deposit Amount > 0"
-      },
-      "Total Debits": {
-        "rule": "Must be a valid number and should match the sum of all debit (withdrawal) amounts.",
-        "type": "number",
-        "calculation": "Sum of all Withdrawal Amounts"
-      },
-      "Total Credits": {
-        "rule": "Must be a valid number and should match the sum of all credit (deposit) amounts.",
-        "type": "number",
-        "calculation": "Sum of all Deposit Amounts"
-      },
-      "Closing Balance": {
-        "rule": "Must be a valid number and should match the last closing balance in the transaction list.",
-         "type": "number",
-        "comparison": "Closing Balance == Last Closing Balance from Transactions"
-      },
-      "Debits and Credits Consistency": {
-        "rule": "The calculated closing balance based on opening balance, total debits, and total credits should match the stated closing balance.",
-        "formula": "Opening Balance + Total Credits - Total Debits = Closing Balance"
+    "projects": {
+      "type": "array",
+      "required": false,
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "required": true
+          },
+          "technologies": {
+            "type": "string",
+            "required": false
+          },
+          "description": {
+            "type": "string",
+            "required": true
+          }
+        }
       }
     },
-    "General": {
-      "Page Number": {
-        "rule": "If the statement has multiple pages, page numbers should be sequential and present on each page.",
-        "conditional": "If multiple pages exist"
-      },
-       "Data Types": {
-        "rule": "Verify that all amount fields are numeric, dates are valid dates, and text fields are strings.",
-        "fields": ["Withdrawal Amount", "Deposit Amount", "Closing Balance", "Date", "Value Date"]
-      },
-      "Completeness": {
-        "rule": "Ensure that all mandatory fields are present and not empty.",
-        "mandatory_fields": ["Bank Name", "Account Holder Name", "Statement Period From", "Statement Period To", "Transactions"]
+    "education": {
+      "type": "array",
+      "required": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "institution": {
+            "type": "string",
+            "required": true
+          },
+          "location": {
+            "type": "string",
+            "required": true
+          },
+          "degree": {
+            "type": "string",
+            "required": true
+          },
+          "start_date": {
+            "type": "string",
+            "required": true,
+            "format": "Month Year",
+            "regex": "^(January|February|March|April|May|June|July|August|September|October|November|December)\\s\\d{4}$"
+          },
+          "end_date": {
+            "type": "string",
+            "required": true,
+            "format": "Month Year",
+            "regex": "^(January|February|March|April|May|June|July|August|September|October|November|December)\\s\\d{4}$|Present"
+          },
+          "cgpi": {
+            "type": "string",
+            "required": false,
+            "regex": "^\\d+(\\.\\d+)?$"
+          },
+           "result": {
+            "type": "string",
+            "required": false,
+            "regex": "^\\d+(\\.\\d+)?%?$"
+          },
+          "details": {
+            "type": "string",
+            "required": false
+          }
+        }
+      }
+    },
+    "achievements": {
+      "type": "array",
+      "required": false,
+      "items": {
+        "type": "string"
       }
     }
   }

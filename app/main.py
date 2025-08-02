@@ -22,7 +22,7 @@ def send_to_backend(file_bytes, file_name):
         return None
     return res.json()
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner=False, hash_funcs={str: lambda _: None})
 def run_crewai(cleaned_text):
     res = requests.post(
         f"{BACKEND_URL}/crew",
@@ -100,6 +100,10 @@ if uploaded_file:
         st.session_state.current_file = file_name
         st.session_state.document_data = {}
         st.session_state.crew_outputs = {}
+        st.cache_data.clear()
+        st.session_state["custom_rules_input"] = ""
+        st.session_state["user_query_input"] = ""
+
 
     if file_name not in st.session_state.document_data:
         with st.spinner("Uploading and parsing document..."):
@@ -171,12 +175,15 @@ if uploaded_file:
         else:
             crew_outputs = st.session_state.crew_outputs[file_name]
 
-        doc_type = crew_outputs.get("type", "Unknown")
-        fields = crew_outputs.get("fields", {})
-        tables = crew_outputs.get("tables", {})
-        rules = crew_outputs.get("rules", {})
-        validation_result = crew_outputs.get("validation_result", {})
-        custom_validation = crew_outputs.get("custom_validation", {})
+        try:
+            doc_type = crew_outputs.get("type", "Unknown")
+            fields = crew_outputs.get("fields", {})
+            tables = crew_outputs.get("tables", {})
+            rules = crew_outputs.get("rules", {})
+            validation_result = crew_outputs.get("validation_result", {})
+            custom_validation = crew_outputs.get("custom_validation", {})
+        except Exception as e:
+            st.error(f"Error from crewAI {e}")
 
         with content_tabs[3]:
             st.json(fields, expanded=True)
@@ -198,7 +205,7 @@ if uploaded_file:
                 st.error(f"Failed to display tables: {err}")
     
     st.subheader("Ask a Question About the Document")
-    user_query = st.text_input("Enter your question")
+    user_query = st.text_input("Enter your question", key="user_query_input")
     all_text = "Document Content \n " + cleaned_text + "\n Image Content \n".join(img_correct_ocr)
     if user_query:
         with st.spinner("Getting answer..."):
@@ -211,15 +218,20 @@ if uploaded_file:
                     stx.scrollableTextbox(ctx, height=120, key=f"context_{i}")
 
     st.divider()
+    # clean the doc_type
     st.markdown(f"### Document Type: `{doc_type}`")
 
     # Valid?
     if validation_result:
-        validation_result = json.loads(validation_result)
+        # st.text(validation_result)
+        if isinstance(validation_result, str) and validation_result.strip():
+            try:
+                validation_result = json.loads(validation_result)
+            except json.JSONDecodeError:
+                st.error("Failed to decode validation result. Invalid JSON format.")
+
         st.subheader("Result")
         # with st.expander("Validation Report"):
-        if isinstance(validation_result, str):
-                validation_result = json.loads(validation_result)
         if not validation_result:
             st.info("No tables found.")
         elif isinstance(validation_result, dict):
@@ -231,24 +243,29 @@ if uploaded_file:
                         with st.expander(f"Table: {name}"):
                             render_table_flexibly(name, data)
             # st.json(validation_result, expanded=True)
-        check_valid = validation_result.get("overall_validity")
-        if check_valid == "VALID":
-            st.success("Document is VALID")
+            check_valid = validation_result.get("overall_validity")
+            if check_valid == "VALID":
+                st.success("Document is VALID")
+            else:
+                st.error("Document is INVALID")
         else:
-            st.error("Document is INVALID")
+            st.warning("Issue with result format.")
 
         st.divider()
         # Custom rules
         st.subheader("Add Custom Rules")
-        custom_rules = st.text_area("Enter custom rules (one per line)", height=200)
+        custom_rules = st.text_area("Enter custom rules (one per line)", height=200, key="custom_rules_input")
         if custom_rules:
             with st.spinner("Validating with custom rules..."):
                 # send a json with text and rules
                 custom_validation = validate_document_with_rules(cleaned_text, custom_rules.splitlines())
                 if custom_validation:
                     st.markdown("**Custom Validation Result:**")
-                    if isinstance(custom_validation, str):
-                        custom_validation = json.loads(custom_validation)
+                    if isinstance(validation_result, str) and validation_result.strip():
+                        try:
+                            validation_result = json.loads(validation_result)
+                        except json.JSONDecodeError:
+                            pass
                     if not custom_validation:
                         st.info("No tables found.")
                     elif isinstance(custom_validation, dict):

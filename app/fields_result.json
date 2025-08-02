@@ -1,346 +1,137 @@
 ```json
 {
-  "Bank Name": "Global Trust Bank",
-  "Account Holder Name": "John A. Doe",
-  "Account Holder Address": "456 Elm St, Apt 12B, Metropolis, NY 10001",
-  "Statement Period From": "2025-03-01",
-  "Statement Period To": "2025-04-30",
-  "Account Branch": "Downtown Branch",
-  "Branch Address": "123 Market St, Downtown, Metropolis",
-  "Branch City": "Metropolis",
-  "Branch State": "NY",
-  "Branch Phone Number": "(555) 123-4567",
-  "Currency": "USD",
-  "Account Open Date": "2018-06-15",
-  "IFSC Code": "GTBK0000456",
-  "Branch Code": "0456",
-  "Transactions": [
+  "title": "Unsloth PEFT based Multilingual Meeting Summarization with Open-Source LLMs",
+  "subtitle": "A Comparative Analysis of LLaMA, DeepSeek, and Mistral Models in Zero-Shot and Few-Shot Settings",
+  "authors": [
     {
-      "Date": "2025-03-01",
-      "Narration": "Opening Balance",
-      "Withdrawal Amount": null,
-      "Deposit Amount": "5,000.00",
-      "Closing Balance": null
+      "name": "Dr. Nupur Giri",
+      "email": "nupur.giri@ves.ac.in",
+      "affiliation": "Vivekanand Education Society’s Institute of Technology, Chembur, Mumbai, India"
     },
     {
-      "Date": "2025-03-02",
-      "Narration": "Grocery Purchase at FreshMart, POS Transaction, UPI ID: freshmart123",
-      "Cheque Number": "102345",
-      "Value Date": "2025-03-02",
-      "Withdrawal Amount": "120.45",
-      "Deposit Amount": null,
-      "Closing Balance": "4,879.55"
+      "name": "Manraj Singh Virdi",
+      "email": "d2021.manrajsingh.virdi@ves.ac.in",
+      "affiliation": "Vivekanand Education Society’s Institute of Technology, Chembur, Mumbai, India"
     },
     {
-      "Date": "2025-03-02",
-      "Narration": "Salary Credit from ABC Corporation, Direct Deposit",
-      "Value Date": "2025-03-02",
-      "Withdrawal Amount": null,
-      "Deposit Amount": "3,500.00",
-      "Closing Balance": "8,379.55"
+      "name": "Sakshi Kirmathe",
+      "email": "d2021.sakshi.kirmathe@ves.ac.in",
+      "affiliation": "Vivekanand Education Society’s Institute of Technology, Chembur, Mumbai, India"
     },
     {
-      "Date": "2025-03-03",
-      "Narration": "Coffee Purchase at Bean Brew Cafe, POS Swipe, Card Ending 4321",
-      "Cheque Number": "102346",
-      "Value Date": "2025-03-03",
-      "Withdrawal Amount": "15.75",
-      "Deposit Amount": null,
-      "Closing Balance": "8,363.80"
+      "name": "Deven Bhagtani",
+      "email": "d2021.deven.bhagtani@ves.ac.in",
+      "affiliation": "Vivekanand Education Society’s Institute of Technology, Chembur, Mumbai, India"
     },
     {
-      "Date": "2025-03-04",
-      "Narration": "Electricity Bill Payment - Metropolis Electric Co., Online Bill Pay, Reference #ELEC654321",
-      "Value Date": "2025-03-04",
-      "Withdrawal Amount": "200.00",
-      "Deposit Amount": null,
-      "Closing Balance": "8,163.80"
-    },
-    {
-      "Date": "2025-03-05",
-      "Narration": "Online Shopping Order from ShopZone.com, UPI Payment ID: shopzone998",
-      "Value Date": "2025-03-05",
-      "Withdrawal Amount": "85.20",
-      "Deposit Amount": null,
-      "Closing Balance": "8,078.60"
-    },
-    {
-      "Date": "2025-03-07",
-      "Narration": "Grocery Purchase at FreshMart, POS Transaction, UPI ID: freshmart123",
-      "Cheque Number": "102347",
-      "Value Date": "2025-03-07",
-      "Withdrawal Amount": "135.60",
-      "Deposit Amount": null,
-      "Closing Balance": "7,942.99"
-    },
-    {
-      "Date": "2025-03-08",
-      "Narration": "Cash Deposit at Branch, Teller Ref #CD789456",
-      "Value Date": "2025-03-08",
-      "Withdrawal Amount": null,
-      "Deposit Amount": "500.00",
-      "Closing Balance": "8,442.99"
-    },
-    {
-      "Date": "2025-03-10",
-      "Narration": "Transfer from Savings Account via Online Banking, Transfer Ref #TRX20250310",
-      "Value Date": "2025-03-10",
-      "Withdrawal Amount": null,
-      "Deposit Amount": "1,000.00",
-      "Closing Balance": "9,442.99"
-    },
-    {
-      "Date": "2025-03-11",
-      "Narration": "Fuel Purchase at FuelUp Gas Station, POS Swipe, Card Ending 4321",
-      "Cheque Number": "102348",
-      "Value Date": "2025-03-11",
-      "Withdrawal Amount": "50.00",
-      "Deposit Amount": null,
-      "Closing Balance": "9,392.99"
-    },
-    {
-      "Date": "2025-03-12",
-      "Narration": "Cheque Deposit - Cheque No. 456789 from Jane Smith",
-      "Cheque Number": "456789",
-      "Value Date": "2025-03-12",
-      "Withdrawal Amount": null,
-      "Deposit Amount": "750.00",
-      "Closing Balance": "10,142.99"
-    },
-    {
-      "Date": "2025-03-15",
-      "Narration": "Dinner Payment at Olive’s Bistro, UPI Payment, UPI ID: olivesbistro456",
-      "Cheque Number": "102349",
-      "Value Date": "2025-03-15",
-      "Withdrawal Amount": "70.00",
-      "Deposit Amount": null,
-      "Closing Balance": "10,072.99"
-    },
-    {
-      "Date": "2025-03-15",
-      "Narration": "Grocery Purchase at FreshMart, POS Transaction, UPI ID: freshmart123",
-      "Cheque Number": "102350",
-      "Value Date": "2025-03-15",
-      "Withdrawal Amount": "110.40",
-      "Deposit Amount": null,
-      "Closing Balance": "9,962.59"
-    },
-    {
-      "Date": "2025-03-18",
-      "Narration": "ATM Withdrawal - Branch Downtown, Txn Ref #ATM034567",
-      "Value Date": "2025-03-18",
-      "Withdrawal Amount": "300.00",
-      "Deposit Amount": null,
-      "Closing Balance": "9,662.59"
-    },
-    {
-      "Date": "2025-03-20",
-      "Narration": "Freelance Project Payment via Online Transfer, Ref #FRL20250320",
-      "Value Date": "2025-03-20",
-      "Withdrawal Amount": null,
-      "Deposit Amount": "1,200.00",
-      "Closing Balance": "10,862.59"
-    },
-    {
-      "Date": "2025-03-21",
-      "Narration": "Internet Bill Payment - NetCom, Online Bill Pay, Ref #NETCOM12345",
-      "Value Date": "2025-03-21",
-      "Withdrawal Amount": "60.00",
-      "Deposit Amount": null,
-      "Closing Balance": "10,802.59"
-    },
-    {
-      "Date": "2025-03-23",
-      "Narration": "POS Purchase - HealthPlus Pharmacy, UPI ID: healthplus789",
-      "Cheque Number": "102351",
-      "Value Date": "2025-03-23",
-      "Withdrawal Amount": "45.30",
-      "Deposit Amount": null,
-      "Closing Balance": "10,757.29"
-    },
-    {
-      "Date": "2025-03-28",
-      "Narration": "Coffee at Bean Brew Cafe, POS Transaction, Card Ending 4321",
-      "Cheque Number": "102352",
-      "Value Date": "2025-03-28",
-      "Withdrawal Amount": "17.80",
-      "Deposit Amount": null,
-      "Closing Balance": "10,739.49"
-    },
-    {
-      "Date": "2025-03-29",
-      "Narration": "Cheque Issued No. 987654 to Rent Payment",
-      "Cheque Number": "987654",
-      "Value Date": "2025-03-29",
-      "Withdrawal Amount": "1,200.00",
-      "Deposit Amount": null,
-      "Closing Balance": "9,539.49"
-    },
-    {
-      "Date": "2025-03-30",
-      "Narration": "Transfer to Savings Account via Online Banking, Ref #TRX20250330",
-      "Value Date": "2025-03-30",
-      "Withdrawal Amount": null,
-      "Deposit Amount": "1,500.00",
-      "Closing Balance": "8,039.49"
-    },
-    {
-      "Date": "2025-03-31",
-      "Narration": "Interest Credit for March, Automated Credit",
-      "Value Date": "2025-03-31",
-      "Withdrawal Amount": null,
-      "Deposit Amount": "12.50",
-      "Closing Balance": "8,051.99"
-    },
-    {
-      "Date": "2025-04-01",
-      "Narration": "Opening Balance",
-      "Withdrawal Amount": null,
-      "Deposit Amount": "8,051.99",
-      "Closing Balance": null
-    },
-    {
-      "Date": "2025-04-02",
-      "Narration": "Grocery Purchase at FreshMart, POS Transaction, UPI ID: freshmart123",
-      "Cheque Number": "102353",
-      "Value Date": "2025-04-02",
-      "Withdrawal Amount": "125.75",
-      "Deposit Amount": null,
-      "Closing Balance": "7,926.24"
-    },
-    {
-      "Date": "2025-04-03",
-      "Narration": "Fuel Purchase at FuelUp Gas Station, POS Swipe, Card Ending 4321",
-      "Cheque Number": "102354",
-      "Value Date": "2025-04-03",
-      "Withdrawal Amount": "60.00",
-      "Deposit Amount": null,
-      "Closing Balance": "7,866.24"
-    },
-    {
-      "Date": "2025-04-05",
-      "Narration": "Salary Credit from ABC Corporation, Direct Deposit",
-      "Value Date": "2025-04-05",
-      "Withdrawal Amount": null,
-      "Deposit Amount": "3,500.00",
-      "Closing Balance": "11,366.24"
-    },
-    {
-      "Date": "2025-04-07",
-      "Narration": "Online Shopping Purchase at ShopZone.com, UPI Payment, Ref #SHOPZ20250407",
-      "Value Date": "2025-04-07",
-      "Withdrawal Amount": "90.50",
-      "Deposit Amount": null,
-      "Closing Balance": "11,275.74"
-    },
-    {
-      "Date": "2025-04-10",
-      "Narration": "Dinner Payment at Olive’s Bistro, UPI Payment, UPI ID: olivesbistro456",
-      "Cheque Number": "102355",
-      "Value Date": "2025-04-10",
-      "Withdrawal Amount": "85.00",
-      "Deposit Amount": null,
-      "Closing Balance": "11,190.74"
-    },
-    {
-      "Date": "2025-04-11",
-      "Narration": "ATM Withdrawal - Downtown Branch, Txn Ref #ATM045678",
-      "Value Date": "2025-04-11",
-      "Withdrawal Amount": "200.00",
-      "Deposit Amount": null,
-      "Closing Balance": "10,990.74"
-    },
-    {
-      "Date": "2025-04-12",
-      "Narration": "Grocery Purchase at FreshMart, POS Transaction, UPI ID: freshmart123",
-      "Cheque Number": "102356",
-      "Value Date": "2025-04-12",
-      "Withdrawal Amount": "140.90",
-      "Deposit Amount": null,
-      "Closing Balance": "10,849.84"
-    },
-    {
-      "Date": "2025-04-15",
-      "Narration": "Transfer from Savings Account via Online Banking, Ref #TRX20250415",
-      "Value Date": "2025-04-15",
-      "Withdrawal Amount": null,
-      "Deposit Amount": "1,000.00",
-      "Closing Balance": "11,849.84"
-    },
-    {
-      "Date": "2025-04-18",
-      "Narration": "POS Purchase - HealthPlus Pharmacy, UPI ID: healthplus789",
-      "Cheque Number": "102357",
-      "Value Date": "2025-04-18",
-      "Withdrawal Amount": "50.00",
-      "Deposit Amount": null,
-      "Closing Balance": "11,799.84"
-    },
-    {
-      "Date": "2025-04-20",
-      "Narration": "Electricity Bill Payment - Metropolis Electric Co., Online Bill Pay, Ref #ELEC654322",
-      "Value Date": "2025-04-20",
-      "Withdrawal Amount": "210.00",
-      "Deposit Amount": null,
-      "Closing Balance": "11,589.84"
-    },
-    {
-      "Date": "2025-04-22",
-      "Narration": "Coffee Purchase at Bean Brew Cafe, POS Transaction, Card Ending 4321",
-      "Cheque Number": "102358",
-      "Value Date": "2025-04-22",
-      "Withdrawal Amount": "18.20",
-      "Deposit Amount": null,
-      "Closing Balance": "11,571.64"
-    },
-    {
-      "Date": "2025-04-25",
-      "Narration": "Internet Bill Payment - NetCom, Online Bill Pay, Ref #NETCOM12346",
-      "Value Date": "2025-04-25",
-      "Withdrawal Amount": "60.00",
-      "Deposit Amount": null,
-      "Closing Balance": "11,511.64"
-    },
-    {
-      "Date": "2025-04-27",
-      "Narration": "Cheque Issued No. 654321 for Car Loan Payment",
-      "Cheque Number": "654321",
-      "Value Date": "2025-04-27",
-      "Withdrawal Amount": "1,000.00",
-      "Deposit Amount": null,
-      "Closing Balance": "10,511.64"
-    },
-    {
-      "Date": "2025-04-28",
-      "Narration": "Transfer to Savings Account via Online Banking, Ref #TRX20250428",
-      "Value Date": "2025-04-28",
-      "Withdrawal Amount": null,
-      "Deposit Amount": "1,200.00",
-      "Closing Balance": "9,311.64"
-    },
-    {
-      "Date": "2025-04-29",
-      "Narration": "Interest Credit for April, Automated Credit",
-      "Value Date": "2025-04-29",
-      "Withdrawal Amount": null,
-      "Deposit Amount": "13.00",
-      "Closing Balance": "9,324.64"
-    },
-    {
-      "Date": "2025-04-30",
-      "Narration": "Closing Balance",
-      "Withdrawal Amount": null,
-      "Deposit Amount": "9,324.64",
-      "Closing Balance": null
+      "name": "Piyush Chugeja",
+      "email": "d2021.piyush.chugeja@ves.ac.in",
+      "affiliation": "Vivekanand Education Society’s Institute of Technology, Chembur, Mumbai, India"
     }
   ],
-  "Generated On": "2025-05-01",
-  "Generated By": "Global Trust Bank Online Banking System",
-  "Opening Balance": "5,000.00",
-  "Debit Count": "26",
-  "Credit Count": "9",
-  "Total Debits": "7,822.25",
-  "Total Credits": "11,975.50",
-  "Closing Balance": "9,324.64"
+  "abstract": "This paper presents a systematic approach to multilingual meeting summarization using open source large language models. Three model families, LLaMA 3, Mistral, and DeepSeek, were evaluated in zero-shot, one-shot, and three-shot settings on a specially prepared dataset of career counseling meeting transcripts. The best models were fine-tuned using Unsloth’s 4-bit quantization and Parameter-Efficient Fine-Tuning (PEFT) with Low Rank Adaptation (LoRA) methods. The experimental results showed that the fine-tuned LLaMA 3.1 (8B) model showed greater efficacy in both English and multilingual settings (English, Hindi, and Marathi), generating high-quality summaries, efficiency, and stable cross-lingual generalization. These findings show that using a low learning rate (1×10−5), small batch sizes with gradient accumulation, and a maximum sequence length of 4096 tokens combined with Unsloth’s 4-bit quantization and PEFT with LoRA helps the model achieve high accuracy while keeping computational costs low. Evaluation using metrics like ROUGE-L, BERT Score, BLEU, and GLEU, along with fast inference on a GPU P100, confirms that this approach delivers clear and high-quality summaries. This balance of performance and efficiency makes the solution scalable and practical for creating AI-based tools for career counseling.",
+  "keywords": [
+    "LLM Fine-Tuning",
+    "Multilingual Summarization",
+    "Open-Source LLMs",
+    "Unsloth Fine-Tuning",
+    "LLaMA",
+    "Mistral",
+    "DeepSeek"
+  ],
+  "model_evaluation": {
+    "table_2": {
+      "description": "Testing pre-trained LLMs on a custom dataset of English transcripts to identify the best performing model from each model family",
+      "columns": [
+        "Setting",
+        "Model",
+        "ROUGE (R1, R2, RL)",
+        "BERT Score (Precision, Recall, F1)",
+        "BLEU",
+        "GLEU"
+      ],
+      "settings": [
+        "0-shot inference",
+        "1-shot inference",
+        "3-shot inference"
+      ],
+      "models": [
+        "Mistral (7B)",
+        "LLaMA 3 (8B)",
+        "LLaMA 3.2 (3B)",
+        "LLaMA 3.1 (8B)",
+        "Mistral v0.3 Instruct (7B)",
+        "Deepseek LLaMA (8B)"
+      ]
+    },
+    "table_3": {
+      "description": "Performance Comparison of Fine-tuned Models on English Transcripts",
+      "columns": [
+        "Model",
+        "ROUGE-L",
+        "BERT F1",
+        "BLEU",
+        "GLEU",
+        "Inference Time"
+      ],
+      "models": [
+        "LLaMA 3.1 (8B)",
+        "Mistral v0.3 Instruct (7B)",
+        "DeepSeek LLaMA (8B)"
+      ]
+    },
+    "table_4": {
+      "description": "Multilingual Evaluation of the Fine-tuned Model",
+      "columns": [
+        "Language",
+        "BERT Score",
+        "ICE",
+        "Redundancy",
+        "Abstractivity",
+        "N-gram Ratio",
+        "Conciseness"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Marathi"
+      ]
+    }
+  },
+  "fine_tuning_setup": {
+    "learning_rate": "1×10−5",
+    "batch_size": 2,
+    "gradient_accumulation_steps": 8,
+    "maximum_sequence_length": 4096,
+    "optimizer": "AdamW",
+    "gpu": "P100"
+  },
+  "references": [
+    "[1] Jay Peters. Google’s Meet teleconferencing service now adding about 3 million users per day — theverge.com. https://www.theverge.com/2020/4/28/21240434/google-meet-three-million-users-per-day-pichai-earnings. [Accessed 14-10-2024].",
+    "[2] Tom Warren. Zoom grows to 300 million meeting participants despite security backlash — theverge.com. https://www.theverge.com/2020/4/23/21232401/zoom-300-million-users-growth-coronavirus-pandemic-security-privacy-concerns-response. [Accessed 14-10-2024].",
+    "[3] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosukhin. Attention is all you need, 2023. URL https://arxiv.org/abs/1706.03762.",
+    "[4] Md Tahmid Rahman Laskar, Xue-Yong Fu, Cheng Chen, and Shashi Bhushan TN. Building real-world meeting summarization systems using large language models: A practical perspective, 2023. URL https://arxiv.org/abs/2310.19233.",
+    "[5] Fei Ge. Fine-tune Whisper and transformer large language model for meeting summarization. PhD thesis, UCLA, 2024.",
+    "[6] Aatman Vaidya, Tarunima Prabhakar, Denny George, and Swair Shah. Analysis of indic language capabilities in llms, 2025. URL https://arxiv.org/abs/2501.13912.",
+    "[7] Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, Amy Yang, Angela Fan, Anirudh Goyal, Anthony Hartshorn, Aobo Yang, Archi Mitra, Archie Sravankumar, and et al. The llama 3 herd of models, 2024. URL https://arxiv.org/abs/2407.21783.",
+    "[8] DeepSeek-AI, Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu, Shirong Ma, Peiyi Wang, Xiao Bi, Xiaokang Zhang, Xingkai Yu, Yu Wu, Z. F. Wu, Zhibin Gou, Zhihong Shao, Zhuoshu Li, Ziyi Gao, Aixin Liu, Bing Xue, Bingxuan Wang, Bochao Wu, Bei Feng, Chengda Lu, Chenggang Zhao, Chengqi Deng, Chenyu Zhang, Chong Ruan, Damai Dai, Deli Chen, Dongjie Ji, Erhang Li, Fangyun Lin, Fucong Dai, Fuli Luo, Guangbo Hao, Guanting Chen, Guowei Li, H. Zhang, Han Bao, Hanwei Xu, Haocheng Wang, Honghui Ding, Huajian Xin, Huazuo Gao, Hui Qu, and et al. Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning, 2025. URL https://arxiv.org/abs/2501.12948.",
+    "[9] Albert Q. Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, Lélio Renard Lavaud, Marie-Anne Lachaux, Pierre Stock, Teven Le Scao, Thibaut Lavril, Thomas Wang, Timothée Lacroix, and William El Sayed. Mistral 7b, 2023. URL https://arxiv.org/abs/2310.06825.",
+    "[10] Michael Han Daniel Han and Unsloth team. Unsloth, 2023. URL http://github.com/unslothai/unsloth.",
+    "[11] Nima Sadri, Bohan Zhang, and Bihan Liu. Meetsum: Transforming meeting transcript summarization using transformers!, 2021. URL https://arxiv.org/abs/2108.06310.",
+    "[12] Sumedh S Bhat, Uzair Ahmed Nawaz, Sujay M, Nameesha Tantri, and Vani Vasudevan. Jotter: An approach to summarize the formal online meeting. In 2023 International Conference on Ambient Intelligence, Knowledge Informatics and Industrial Electronics (AIKIIE), pages 1–6, 2023. doi: 10.1109/AIKIIE60097.2023.10390455.",
+    "[13] Lakshmi Prasanna Kumar and Arman Kabiri. Meeting summarization: A survey of the state of the art, 2022. URL https://arxiv.org/abs/2212.08206.",
+    "[14] Medha Wyawahare, Madhuri Shelke, Siddharth Bhorge, and Rohit Agrawal. Ai powered multilingual meeting summarization. In 2024 14th International Conference on Cloud Computing, Data Science & Engineering (Confluence), pages 86–91, Jan 2024. doi: 10.1109/Confluence60223.2024.10463307.",
+    "[15] Aseem Srivastava, Tharun Suresh, Sarah P. Lord, Md Shad Akhtar, and Tanmoy Chakraborty. Counseling summarization using mental health knowledge guided utterance filtering. In Proceedings of the 28th ACM SIGKDD Conference on Knowledge Discovery and Data Mining, KDD ’22, page 3920–3930, New York, NY, USA, 2022. Association for Computing Machinery. ISBN 9781450393850. doi: 10.1145/3534678.3539187. URL https://doi.org/10.1145/3534678.3539187.",
+    "[16] Tianyi Zhang, Faisal Ladhak, Esin Durmus, Percy Liang, K. McKeown, and Tatsunori Hashimoto. Benchmarking large language models for news summarization. Transactions of the Association for Computational Linguistics, 12:39–57, 2023. doi: 10.1162/tacl_a_00632.",
+    "[17] Tim Dettmers, Artidoro Pagnoni, Ari Holtzman, and Luke Zettlemoyer. Qlora: Efficient finetuning of quantized llms, 2023. URL https://arxiv.org/abs/2305.14314.",
+    "[18] Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu Chen. Lora: Low-rank adaptation of large language models, 2021. URL https://arxiv.org/abs/2106.09685.",
+    "[19] Geetanjali Singh, Namita Mittal, and Satyendra Singh Chouhan. Hindisumm: A hindi abstractive summarization benchmark dataset. ACM Trans. Asian Low-Resour. Lang. Inf. Process., 23(12), November 2024. ISSN 2375-4699. doi: 10.1145/3696207. URL https://doi.org/10.1145/3696207.",
+    "[20] Daisy Monika Lal, Paul Rayson, Krishna Pratap Singh, and Uma Shanker Tiwary. Abstractive Hindi text summarization: A challenge in a low-resource setting. In Jyoti D. Pawar and Sobha Lalitha Devi, editors, Proceedings of the 20th International Conference on Natural Language Processing (ICON), pages 603–612, Goa University, Goa, India, December 2023. NLP Association of India (NLPAI). URL https://aclanthology.org/2023.icon-1.58/.",
+    "[21] Tong Xiao and Jingbo Zhu. Foundations of large language models, 2025. URL https://arxiv.org/abs/2501.09223.",
+    "[22] Chin-Yew Lin. ROUGE: A package for automatic evaluation of summaries. In Text Summarization Branches Out, pages 74–81, Barcelona, Spain, July 2004. Association for Computational Linguistics. URL https://aclanthology.org/W04-1013/.",
+    "[23] Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. BLEU: a method for automatic evaluation of machine translation. In Pierre Isabelle, Eugene Charniak, and Dekang Lin, editors, Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics, pages 311–318, Philadelphia, Pennsylvania, USA, July 2002. Association for Computational Linguistics. doi: 10.3115/1073083.1073135. URL https://aclanthology.org/P02-1040/.",
+    "[24] Maxime Peyrard, Teresa Botschen, and Iryna Gurevych. Learning to score system summaries for better content selection evaluation. In Lu Wang, Jackie Chi Kit Cheung, Giuseppe Carenini, and Fei Liu, editors, Proceedings of the Workshop on New Frontiers in Summarization, pages 74–84, Copenhagen, Denmark, September 2017. Association for Computational Linguistics. doi: 10.18653/v1/W17-4510. URL https://aclanthology.org/W17-4510/.",
+    "[25] Tianyi Zhang, Varsha Kishore, Felix Wu, Kilian Q. Weinberger, and Yoav Artzi. Bertscore: Evaluating text generation with bert, 2020. URL https://arxiv.org/abs/1904.09675."
+  ]
 }
 ```

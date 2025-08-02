@@ -60,23 +60,26 @@ def run_crew_pipeline(cleaned_text: str):
 
     rule_task = Task(
         description=f"Suggest some logical validation rules:\n\n{cleaned_text}",
-        expected_output="List of basic rules like 'amount must be > 0', 'GST number must match regex XYZ', etc.",
+        expected_output="List of basic rules like 'amount must be > 0', 'GST number must match regex XYZ', etc. ",
         agent=rule_suggester_agent,
         output_file="rules_result.json"
     )
 
     rule_check_task = Task(
-    description=(
-        f"Here is the extracted document:\n---\n{cleaned_text}\n---\n\n"
-        f"And here are the rules that this document must satisfy: {read_file('rules_result.json')} \n\n"
-        f"Please validate the document against the rules. "
-        f"For each rule, say whether it passed or failed, and explain why. "
-        f"Return the result in JSON format with individual rule status and an overall 'VALID' or 'INVALID' summary."
-    ),
-    expected_output="A JSON validation report showing pass/fail for each rule and overall document validity.",
-    agent=rule_checker_agent,
-    output_file="validation_result.json"
-)
+        description=(
+            f"Here is the extracted document:\n---\n{cleaned_text}\n---\n\n"
+            # give rhe rules from previous task
+            f"And below are the rules that this document must satisfy, it is the output of the previous task."
+            f"Please validate the document against the rules. "
+            f"For each rule, say whether it passed or failed, and explain why. "
+            f"DO NOT return markdown or wrap JSON in backticks. Only return the JSON. Do not add any explainations or additional text, just return the JSON."
+            f"Return the result in JSON format with individual rule status and an overall 'VALID' or 'INVALID' summary."
+        ),
+        context=[rule_task],
+        expected_output="A JSON validation report showing pass/fail for each rule and overall document validity.",
+        agent=rule_checker_agent,
+        output_file="validation_result.json"
+    )   
 
 
     # Crew
