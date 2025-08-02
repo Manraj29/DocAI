@@ -1,0 +1,346 @@
+```json
+{
+  "Bank Name": "Global Trust Bank",
+  "Account Holder Name": "John A. Doe",
+  "Account Holder Address": "456 Elm St, Apt 12B, Metropolis, NY 10001",
+  "Statement Period From": "2025-03-01",
+  "Statement Period To": "2025-04-30",
+  "Account Branch": "Downtown Branch",
+  "Branch Address": "123 Market St, Downtown, Metropolis",
+  "Branch City": "Metropolis",
+  "Branch State": "NY",
+  "Branch Phone Number": "(555) 123-4567",
+  "Currency": "USD",
+  "Account Open Date": "2018-06-15",
+  "IFSC Code": "GTBK0000456",
+  "Branch Code": "0456",
+  "Transactions": [
+    {
+      "Date": "2025-03-01",
+      "Narration": "Opening Balance",
+      "Withdrawal Amount": null,
+      "Deposit Amount": "5,000.00",
+      "Closing Balance": null
+    },
+    {
+      "Date": "2025-03-02",
+      "Narration": "Grocery Purchase at FreshMart, POS Transaction, UPI ID: freshmart123",
+      "Cheque Number": "102345",
+      "Value Date": "2025-03-02",
+      "Withdrawal Amount": "120.45",
+      "Deposit Amount": null,
+      "Closing Balance": "4,879.55"
+    },
+    {
+      "Date": "2025-03-02",
+      "Narration": "Salary Credit from ABC Corporation, Direct Deposit",
+      "Value Date": "2025-03-02",
+      "Withdrawal Amount": null,
+      "Deposit Amount": "3,500.00",
+      "Closing Balance": "8,379.55"
+    },
+    {
+      "Date": "2025-03-03",
+      "Narration": "Coffee Purchase at Bean Brew Cafe, POS Swipe, Card Ending 4321",
+      "Cheque Number": "102346",
+      "Value Date": "2025-03-03",
+      "Withdrawal Amount": "15.75",
+      "Deposit Amount": null,
+      "Closing Balance": "8,363.80"
+    },
+    {
+      "Date": "2025-03-04",
+      "Narration": "Electricity Bill Payment - Metropolis Electric Co., Online Bill Pay, Reference #ELEC654321",
+      "Value Date": "2025-03-04",
+      "Withdrawal Amount": "200.00",
+      "Deposit Amount": null,
+      "Closing Balance": "8,163.80"
+    },
+    {
+      "Date": "2025-03-05",
+      "Narration": "Online Shopping Order from ShopZone.com, UPI Payment ID: shopzone998",
+      "Value Date": "2025-03-05",
+      "Withdrawal Amount": "85.20",
+      "Deposit Amount": null,
+      "Closing Balance": "8,078.60"
+    },
+    {
+      "Date": "2025-03-07",
+      "Narration": "Grocery Purchase at FreshMart, POS Transaction, UPI ID: freshmart123",
+      "Cheque Number": "102347",
+      "Value Date": "2025-03-07",
+      "Withdrawal Amount": "135.60",
+      "Deposit Amount": null,
+      "Closing Balance": "7,942.99"
+    },
+    {
+      "Date": "2025-03-08",
+      "Narration": "Cash Deposit at Branch, Teller Ref #CD789456",
+      "Value Date": "2025-03-08",
+      "Withdrawal Amount": null,
+      "Deposit Amount": "500.00",
+      "Closing Balance": "8,442.99"
+    },
+    {
+      "Date": "2025-03-10",
+      "Narration": "Transfer from Savings Account via Online Banking, Transfer Ref #TRX20250310",
+      "Value Date": "2025-03-10",
+      "Withdrawal Amount": null,
+      "Deposit Amount": "1,000.00",
+      "Closing Balance": "9,442.99"
+    },
+    {
+      "Date": "2025-03-11",
+      "Narration": "Fuel Purchase at FuelUp Gas Station, POS Swipe, Card Ending 4321",
+      "Cheque Number": "102348",
+      "Value Date": "2025-03-11",
+      "Withdrawal Amount": "50.00",
+      "Deposit Amount": null,
+      "Closing Balance": "9,392.99"
+    },
+    {
+      "Date": "2025-03-12",
+      "Narration": "Cheque Deposit - Cheque No. 456789 from Jane Smith",
+      "Cheque Number": "456789",
+      "Value Date": "2025-03-12",
+      "Withdrawal Amount": null,
+      "Deposit Amount": "750.00",
+      "Closing Balance": "10,142.99"
+    },
+    {
+      "Date": "2025-03-15",
+      "Narration": "Dinner Payment at Olive’s Bistro, UPI Payment, UPI ID: olivesbistro456",
+      "Cheque Number": "102349",
+      "Value Date": "2025-03-15",
+      "Withdrawal Amount": "70.00",
+      "Deposit Amount": null,
+      "Closing Balance": "10,072.99"
+    },
+    {
+      "Date": "2025-03-15",
+      "Narration": "Grocery Purchase at FreshMart, POS Transaction, UPI ID: freshmart123",
+      "Cheque Number": "102350",
+      "Value Date": "2025-03-15",
+      "Withdrawal Amount": "110.40",
+      "Deposit Amount": null,
+      "Closing Balance": "9,962.59"
+    },
+    {
+      "Date": "2025-03-18",
+      "Narration": "ATM Withdrawal - Branch Downtown, Txn Ref #ATM034567",
+      "Value Date": "2025-03-18",
+      "Withdrawal Amount": "300.00",
+      "Deposit Amount": null,
+      "Closing Balance": "9,662.59"
+    },
+    {
+      "Date": "2025-03-20",
+      "Narration": "Freelance Project Payment via Online Transfer, Ref #FRL20250320",
+      "Value Date": "2025-03-20",
+      "Withdrawal Amount": null,
+      "Deposit Amount": "1,200.00",
+      "Closing Balance": "10,862.59"
+    },
+    {
+      "Date": "2025-03-21",
+      "Narration": "Internet Bill Payment - NetCom, Online Bill Pay, Ref #NETCOM12345",
+      "Value Date": "2025-03-21",
+      "Withdrawal Amount": "60.00",
+      "Deposit Amount": null,
+      "Closing Balance": "10,802.59"
+    },
+    {
+      "Date": "2025-03-23",
+      "Narration": "POS Purchase - HealthPlus Pharmacy, UPI ID: healthplus789",
+      "Cheque Number": "102351",
+      "Value Date": "2025-03-23",
+      "Withdrawal Amount": "45.30",
+      "Deposit Amount": null,
+      "Closing Balance": "10,757.29"
+    },
+    {
+      "Date": "2025-03-28",
+      "Narration": "Coffee at Bean Brew Cafe, POS Transaction, Card Ending 4321",
+      "Cheque Number": "102352",
+      "Value Date": "2025-03-28",
+      "Withdrawal Amount": "17.80",
+      "Deposit Amount": null,
+      "Closing Balance": "10,739.49"
+    },
+    {
+      "Date": "2025-03-29",
+      "Narration": "Cheque Issued No. 987654 to Rent Payment",
+      "Cheque Number": "987654",
+      "Value Date": "2025-03-29",
+      "Withdrawal Amount": "1,200.00",
+      "Deposit Amount": null,
+      "Closing Balance": "9,539.49"
+    },
+    {
+      "Date": "2025-03-30",
+      "Narration": "Transfer to Savings Account via Online Banking, Ref #TRX20250330",
+      "Value Date": "2025-03-30",
+      "Withdrawal Amount": null,
+      "Deposit Amount": "1,500.00",
+      "Closing Balance": "8,039.49"
+    },
+    {
+      "Date": "2025-03-31",
+      "Narration": "Interest Credit for March, Automated Credit",
+      "Value Date": "2025-03-31",
+      "Withdrawal Amount": null,
+      "Deposit Amount": "12.50",
+      "Closing Balance": "8,051.99"
+    },
+    {
+      "Date": "2025-04-01",
+      "Narration": "Opening Balance",
+      "Withdrawal Amount": null,
+      "Deposit Amount": "8,051.99",
+      "Closing Balance": null
+    },
+    {
+      "Date": "2025-04-02",
+      "Narration": "Grocery Purchase at FreshMart, POS Transaction, UPI ID: freshmart123",
+      "Cheque Number": "102353",
+      "Value Date": "2025-04-02",
+      "Withdrawal Amount": "125.75",
+      "Deposit Amount": null,
+      "Closing Balance": "7,926.24"
+    },
+    {
+      "Date": "2025-04-03",
+      "Narration": "Fuel Purchase at FuelUp Gas Station, POS Swipe, Card Ending 4321",
+      "Cheque Number": "102354",
+      "Value Date": "2025-04-03",
+      "Withdrawal Amount": "60.00",
+      "Deposit Amount": null,
+      "Closing Balance": "7,866.24"
+    },
+    {
+      "Date": "2025-04-05",
+      "Narration": "Salary Credit from ABC Corporation, Direct Deposit",
+      "Value Date": "2025-04-05",
+      "Withdrawal Amount": null,
+      "Deposit Amount": "3,500.00",
+      "Closing Balance": "11,366.24"
+    },
+    {
+      "Date": "2025-04-07",
+      "Narration": "Online Shopping Purchase at ShopZone.com, UPI Payment, Ref #SHOPZ20250407",
+      "Value Date": "2025-04-07",
+      "Withdrawal Amount": "90.50",
+      "Deposit Amount": null,
+      "Closing Balance": "11,275.74"
+    },
+    {
+      "Date": "2025-04-10",
+      "Narration": "Dinner Payment at Olive’s Bistro, UPI Payment, UPI ID: olivesbistro456",
+      "Cheque Number": "102355",
+      "Value Date": "2025-04-10",
+      "Withdrawal Amount": "85.00",
+      "Deposit Amount": null,
+      "Closing Balance": "11,190.74"
+    },
+    {
+      "Date": "2025-04-11",
+      "Narration": "ATM Withdrawal - Downtown Branch, Txn Ref #ATM045678",
+      "Value Date": "2025-04-11",
+      "Withdrawal Amount": "200.00",
+      "Deposit Amount": null,
+      "Closing Balance": "10,990.74"
+    },
+    {
+      "Date": "2025-04-12",
+      "Narration": "Grocery Purchase at FreshMart, POS Transaction, UPI ID: freshmart123",
+      "Cheque Number": "102356",
+      "Value Date": "2025-04-12",
+      "Withdrawal Amount": "140.90",
+      "Deposit Amount": null,
+      "Closing Balance": "10,849.84"
+    },
+    {
+      "Date": "2025-04-15",
+      "Narration": "Transfer from Savings Account via Online Banking, Ref #TRX20250415",
+      "Value Date": "2025-04-15",
+      "Withdrawal Amount": null,
+      "Deposit Amount": "1,000.00",
+      "Closing Balance": "11,849.84"
+    },
+    {
+      "Date": "2025-04-18",
+      "Narration": "POS Purchase - HealthPlus Pharmacy, UPI ID: healthplus789",
+      "Cheque Number": "102357",
+      "Value Date": "2025-04-18",
+      "Withdrawal Amount": "50.00",
+      "Deposit Amount": null,
+      "Closing Balance": "11,799.84"
+    },
+    {
+      "Date": "2025-04-20",
+      "Narration": "Electricity Bill Payment - Metropolis Electric Co., Online Bill Pay, Ref #ELEC654322",
+      "Value Date": "2025-04-20",
+      "Withdrawal Amount": "210.00",
+      "Deposit Amount": null,
+      "Closing Balance": "11,589.84"
+    },
+    {
+      "Date": "2025-04-22",
+      "Narration": "Coffee Purchase at Bean Brew Cafe, POS Transaction, Card Ending 4321",
+      "Cheque Number": "102358",
+      "Value Date": "2025-04-22",
+      "Withdrawal Amount": "18.20",
+      "Deposit Amount": null,
+      "Closing Balance": "11,571.64"
+    },
+    {
+      "Date": "2025-04-25",
+      "Narration": "Internet Bill Payment - NetCom, Online Bill Pay, Ref #NETCOM12346",
+      "Value Date": "2025-04-25",
+      "Withdrawal Amount": "60.00",
+      "Deposit Amount": null,
+      "Closing Balance": "11,511.64"
+    },
+    {
+      "Date": "2025-04-27",
+      "Narration": "Cheque Issued No. 654321 for Car Loan Payment",
+      "Cheque Number": "654321",
+      "Value Date": "2025-04-27",
+      "Withdrawal Amount": "1,000.00",
+      "Deposit Amount": null,
+      "Closing Balance": "10,511.64"
+    },
+    {
+      "Date": "2025-04-28",
+      "Narration": "Transfer to Savings Account via Online Banking, Ref #TRX20250428",
+      "Value Date": "2025-04-28",
+      "Withdrawal Amount": null,
+      "Deposit Amount": "1,200.00",
+      "Closing Balance": "9,311.64"
+    },
+    {
+      "Date": "2025-04-29",
+      "Narration": "Interest Credit for April, Automated Credit",
+      "Value Date": "2025-04-29",
+      "Withdrawal Amount": null,
+      "Deposit Amount": "13.00",
+      "Closing Balance": "9,324.64"
+    },
+    {
+      "Date": "2025-04-30",
+      "Narration": "Closing Balance",
+      "Withdrawal Amount": null,
+      "Deposit Amount": "9,324.64",
+      "Closing Balance": null
+    }
+  ],
+  "Generated On": "2025-05-01",
+  "Generated By": "Global Trust Bank Online Banking System",
+  "Opening Balance": "5,000.00",
+  "Debit Count": "26",
+  "Credit Count": "9",
+  "Total Debits": "7,822.25",
+  "Total Credits": "11,975.50",
+  "Closing Balance": "9,324.64"
+}
+```
