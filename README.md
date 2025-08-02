@@ -1,6 +1,6 @@
-# 🧠 DocAI: Document Validation System
+# DocAI: Document Validation System
 
-**DocuIntel** is an intelligent document processing pipeline that leverages GenAI and traditional NLP to extract, classify, validate, and answer questions about documents. It supports multiple file types (PDF, DOCX, TXT, JPG, PNG), integrates AI agents for field extraction and rule validation, and provides a streamlined UI for interaction, query handling, and results visualization.
+**DocAI** is an intelligent document processing pipeline that leverages GenAI and traditional NLP to extract, classify, validate, and answer questions about documents. It supports multiple file types (PDF, DOCX, TXT, JPG, PNG), integrates AI agents for field extraction and rule validation, and provides a streamlined UI for interaction, query handling, and results visualization.
 
 ---
 
@@ -27,7 +27,7 @@
 | Layer       | Tech/Tool                                   |
 |------------|----------------------------------------------|
 | Frontend   | [Streamlit](https://streamlit.io/)           |
-| Backend    | [Flask](https://flask.palletsprojects.com/) + [FastAPI](https://fastapi.tiangolo.com/) |
+| Backend    | [FastAPI](https://fastapi.tiangolo.com/)     |
 | Embeddings | `all-MiniLM-L6-v2` from HuggingFace          |
 | LLM        | Google Gemini API                            |
 | Vector DB  | [FAISS](https://github.com/facebookresearch/faiss) |
@@ -85,7 +85,7 @@ AI generated Rule Validation
 <img width="1753" height="758" alt="image" src="https://github.com/user-attachments/assets/e5eccdd2-ac1f-4fae-b1c0-a7590b955d28" />
 Custom rule validation
 <img width="1770" height="918" alt="image" src="https://github.com/user-attachments/assets/d21c937a-c782-43a2-af51-f6f7f65eb211" />
-Storing data to MongoDB Database
+Storing data to MongoDB Database <br />
 <img width="505" height="230" alt="image" src="https://github.com/user-attachments/assets/1dd38035-f643-4b0c-831b-4bbfb393cbf2" />
 <img width="694" height="764" alt="image" src="https://github.com/user-attachments/assets/80a025c9-3638-4822-bb0c-6738bb9c090a" />
 

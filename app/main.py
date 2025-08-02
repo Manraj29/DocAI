@@ -8,8 +8,8 @@ import streamlit_scrollable_textbox as stx
 
 BACKEND_URL = "http://localhost:8000"
 
-st.set_page_config(layout="wide", page_title="Smart Document Insight Engine")
-st.title("Smart Document Insight Engine")
+st.set_page_config(layout="wide", page_title="Document Validation System")
+st.title("Document Validation System")
 
 @st.cache_data(show_spinner=False)
 def send_to_backend(file_bytes, file_name):

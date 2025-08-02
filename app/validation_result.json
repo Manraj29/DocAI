@@ -2,319 +2,84 @@
 {
   "results": [
     {
-      "rule": "name.required",
+      "rule": "date_format",
       "status": "pass",
-      "reason": "Name is present"
+      "reason": "Date is in dd/MM/yyyy format."
     },
     {
-      "rule": "name.max_length",
+      "rule": "numeric",
       "status": "pass",
-      "reason": "Name length is within limit"
+      "reason": "Total amount is a valid number."
     },
     {
-      "rule": "name.regex",
+      "rule": "min_value",
       "status": "pass",
-      "reason": "Name matches the regex"
+      "reason": "Total amount is greater than or equal to 0."
     },
     {
-      "rule": "phone.required",
+      "rule": "required",
       "status": "pass",
-      "reason": "Phone is present"
+      "reason": "Record number is present."
     },
     {
-      "rule": "phone.regex",
+      "rule": "required",
       "status": "pass",
-      "reason": "Phone matches the regex"
+      "reason": "Student name is present."
     },
     {
-      "rule": "email.required",
+      "rule": "required",
       "status": "pass",
-      "reason": "Email is present"
+      "reason": "Admission number is present."
     },
     {
-      "rule": "email.regex",
+      "rule": "required",
       "status": "pass",
-      "reason": "Email matches the regex"
+      "reason": "Student ID is present."
     },
     {
-      "rule": "linkedin.regex",
+      "rule": "required",
       "status": "pass",
-      "reason": "LinkedIn matches the regex"
+      "reason": "Amount in words is present."
     },
     {
-      "rule": "github.regex",
+      "rule": "matches_amount",
       "status": "pass",
-      "reason": "Github matches the regex"
+      "reason": "Amount in words matches the total amount."
     },
     {
-      "rule": "objective.max_length",
+      "rule": "required",
       "status": "pass",
-      "reason": "Objective length is within limit"
+      "reason": "Fees breakdown is present."
     },
     {
-      "rule": "internship_experience.0.company.required",
+      "rule": "total_matches_breakdown",
       "status": "pass",
-      "reason": "Company is present"
+      "reason": "The sum of individual fees equals the total_amount."
     },
     {
-      "rule": "internship_experience.0.title.required",
+      "rule": "numeric",
       "status": "pass",
-      "reason": "Title is present"
+      "reason": "Bank amount is a valid number."
     },
     {
-      "rule": "internship_experience.0.start_date.required",
+      "rule": "matches_amount",
       "status": "pass",
-      "reason": "Start date is present"
+      "reason": "Bank amount matches the total amount."
     },
     {
-      "rule": "internship_experience.0.start_date.regex",
+      "rule": "required",
       "status": "pass",
-      "reason": "Start date matches the regex"
+      "reason": "Class is present."
     },
     {
-      "rule": "internship_experience.0.end_date.required",
+      "rule": "required",
       "status": "pass",
-      "reason": "End date is present"
+      "reason": "Sender is present."
     },
     {
-      "rule": "internship_experience.0.end_date.regex",
+      "rule": "required",
       "status": "pass",
-      "reason": "End date matches the regex"
-    },
-    {
-      "rule": "internship_experience.0.description.required",
-      "status": "pass",
-      "reason": "Description is present"
-    },
-    {
-      "rule": "internship_experience.1.company.required",
-      "status": "pass",
-      "reason": "Company is present"
-    },
-    {
-      "rule": "internship_experience.1.title.required",
-      "status": "pass",
-      "reason": "Title is present"
-    },
-    {
-      "rule": "internship_experience.1.start_date.required",
-      "status": "pass",
-      "reason": "Start date is present"
-    },
-    {
-      "rule": "internship_experience.1.start_date.regex",
-      "status": "pass",
-      "reason": "Start date matches the regex"
-    },
-    {
-      "rule": "internship_experience.1.end_date.required",
-      "status": "pass",
-      "reason": "End date is present"
-    },
-    {
-      "rule": "internship_experience.1.end_date.regex",
-      "status": "pass",
-      "reason": "End date matches the regex"
-    },
-    {
-      "rule": "internship_experience.1.description.required",
-      "status": "pass",
-      "reason": "Description is present"
-    },
-    {
-      "rule": "internship_experience.2.company.required",
-      "status": "pass",
-      "reason": "Company is present"
-    },
-    {
-      "rule": "internship_experience.2.title.required",
-      "status": "pass",
-      "reason": "Title is present"
-    },
-    {
-      "rule": "internship_experience.2.start_date.required",
-      "status": "pass",
-      "reason": "Start date is present"
-    },
-    {
-      "rule": "internship_experience.2.start_date.regex",
-      "status": "pass",
-      "reason": "Start date matches the regex"
-    },
-    {
-      "rule": "internship_experience.2.end_date.required",
-      "status": "pass",
-      "reason": "End date is present"
-    },
-    {
-      "rule": "internship_experience.2.end_date.regex",
-      "status": "pass",
-      "reason": "End date matches the regex"
-    },
-    {
-      "rule": "internship_experience.2.description.required",
-      "status": "pass",
-      "reason": "Description is present"
-    },
-    {
-      "rule": "projects.0.name.required",
-      "status": "pass",
-      "reason": "Project name is present"
-    },
-    {
-      "rule": "projects.0.description.required",
-      "status": "pass",
-      "reason": "Project description is present"
-    },
-    {
-      "rule": "projects.1.name.required",
-      "status": "pass",
-      "reason": "Project name is present"
-    },
-    {
-      "rule": "projects.1.description.required",
-      "status": "pass",
-      "reason": "Project description is present"
-    },
-    {
-      "rule": "projects.2.name.required",
-      "status": "pass",
-      "reason": "Project name is present"
-    },
-    {
-      "rule": "projects.2.description.required",
-      "status": "pass",
-      "reason": "Project description is present"
-    },
-    {
-      "rule": "projects.3.name.required",
-      "status": "pass",
-      "reason": "Project name is present"
-    },
-    {
-      "rule": "projects.3.description.required",
-      "status": "pass",
-      "reason": "Project description is present"
-    },
-    {
-      "rule": "education.0.institution.required",
-      "status": "pass",
-      "reason": "Institution is present"
-    },
-    {
-      "rule": "education.0.location.required",
-      "status": "pass",
-      "reason": "Location is present"
-    },
-    {
-      "rule": "education.0.degree.required",
-      "status": "pass",
-      "reason": "Degree is present"
-    },
-    {
-      "rule": "education.0.start_date.required",
-      "status": "pass",
-      "reason": "Start date is present"
-    },
-    {
-      "rule": "education.0.start_date.regex",
-      "status": "pass",
-      "reason": "Start date matches the regex"
-    },
-    {
-      "rule": "education.0.end_date.required",
-      "status": "pass",
-      "reason": "End date is present"
-    },
-    {
-      "rule": "education.0.end_date.regex",
-      "status": "pass",
-      "reason": "End date matches the regex"
-    },
-    {
-      "rule": "education.0.cgpi.regex",
-      "status": "pass",
-      "reason": "CGPI matches the regex"
-    },
-    {
-      "rule": "education.1.institution.required",
-      "status": "pass",
-      "reason": "Institution is present"
-    },
-    {
-      "rule": "education.1.location.required",
-      "status": "pass",
-      "reason": "Location is present"
-    },
-    {
-      "rule": "education.1.degree.required",
-      "status": "pass",
-      "reason": "Degree is present"
-    },
-    {
-      "rule": "education.1.start_date.required",
-      "status": "pass",
-      "reason": "Start date is present"
-    },
-    {
-      "rule": "education.1.start_date.regex",
-      "status": "pass",
-      "reason": "Start date matches the regex"
-    },
-    {
-      "rule": "education.1.end_date.required",
-      "status": "pass",
-      "reason": "End date is present"
-    },
-    {
-      "rule": "education.1.end_date.regex",
-      "status": "pass",
-      "reason": "End date matches the regex"
-    },
-    {
-      "rule": "education.1.result.regex",
-      "status": "pass",
-      "reason": "Result matches the regex"
-    },
-    {
-      "rule": "education.2.institution.required",
-      "status": "pass",
-      "reason": "Institution is present"
-    },
-    {
-      "rule": "education.2.location.required",
-      "status": "pass",
-      "reason": "Location is present"
-    },
-    {
-      "rule": "education.2.degree.required",
-      "status": "pass",
-      "reason": "Degree is present"
-    },
-    {
-      "rule": "education.2.start_date.required",
-      "status": "pass",
-      "reason": "Start date is present"
-    },
-    {
-      "rule": "education.2.start_date.regex",
-      "status": "pass",
-      "reason": "Start date matches the regex"
-    },
-    {
-      "rule": "education.2.end_date.required",
-      "status": "pass",
-      "reason": "End date is present"
-    },
-    {
-      "rule": "education.2.end_date.regex",
-      "status": "pass",
-      "reason": "End date matches the regex"
-    },
-    {
-      "rule": "education.2.result.regex",
-      "status": "pass",
-      "reason": "Result matches the regex"
+      "reason": "Address is present."
     }
   ],
   "overall_validity": "VALID",

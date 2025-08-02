@@ -1,137 +1,33 @@
 ```json
 {
-  "title": "Unsloth PEFT based Multilingual Meeting Summarization with Open-Source LLMs",
-  "subtitle": "A Comparative Analysis of LLaMA, DeepSeek, and Mistral Models in Zero-Shot and Few-Shot Settings",
-  "authors": [
-    {
-      "name": "Dr. Nupur Giri",
-      "email": "nupur.giri@ves.ac.in",
-      "affiliation": "Vivekanand Education Society’s Institute of Technology, Chembur, Mumbai, India"
+    "sender": "Vivekanand Education Society's INSTITUTE OF TECHNOLOGY",
+    "address": "HASHU ADVANI MEMORIAL COMPLEX, COLLECTOR's COLONY, CHEMBUR, MUMBAI- 400074",
+    "date": "11/08/2024",
+    "record_number": "B25/BE/BN/2024-2025/1140",
+    "class": "BE (COMPUTER ENGINEERING)-7",
+    "name": "MANRAJ SINGH VIRDI",
+    "admission_number": "195",
+    "student_id": "4278480",
+    "fee_type": "EBC",
+    "roll_number": "D7B69",
+    "total_amount": "72331.00",
+    "amount_in_words": "SEVENTY TWO THOUSAND THREE HUNDRED THIRTY ONE RUPEES ONLY",
+    "medium": "ENGLISH",
+    "subject": "NA",
+    "bank": "72331.00",
+    "remarks": "NA",
+    "fees_breakdown": {
+        "ADMISSION FEES": "500.00",
+        "ALUMNI FEES": "500.00",
+        "CONVOCATION FEES": "250.00",
+        "DEVELOPMENT FEES": "11695.00",
+        "EXAM FEES (ODD / EVEN)": "4000.00",
+        "GYMKHANA FEES": "400.00",
+        "TUITION FEES": "54653.00",
+        "UNIVERSITY CHARGES & OTHER FEES": "146.00",
+        "YUVARAKSHA INSURANCE": "187.00"
     },
-    {
-      "name": "Manraj Singh Virdi",
-      "email": "d2021.manrajsingh.virdi@ves.ac.in",
-      "affiliation": "Vivekanand Education Society’s Institute of Technology, Chembur, Mumbai, India"
-    },
-    {
-      "name": "Sakshi Kirmathe",
-      "email": "d2021.sakshi.kirmathe@ves.ac.in",
-      "affiliation": "Vivekanand Education Society’s Institute of Technology, Chembur, Mumbai, India"
-    },
-    {
-      "name": "Deven Bhagtani",
-      "email": "d2021.deven.bhagtani@ves.ac.in",
-      "affiliation": "Vivekanand Education Society’s Institute of Technology, Chembur, Mumbai, India"
-    },
-    {
-      "name": "Piyush Chugeja",
-      "email": "d2021.piyush.chugeja@ves.ac.in",
-      "affiliation": "Vivekanand Education Society’s Institute of Technology, Chembur, Mumbai, India"
-    }
-  ],
-  "abstract": "This paper presents a systematic approach to multilingual meeting summarization using open source large language models. Three model families, LLaMA 3, Mistral, and DeepSeek, were evaluated in zero-shot, one-shot, and three-shot settings on a specially prepared dataset of career counseling meeting transcripts. The best models were fine-tuned using Unsloth’s 4-bit quantization and Parameter-Efficient Fine-Tuning (PEFT) with Low Rank Adaptation (LoRA) methods. The experimental results showed that the fine-tuned LLaMA 3.1 (8B) model showed greater efficacy in both English and multilingual settings (English, Hindi, and Marathi), generating high-quality summaries, efficiency, and stable cross-lingual generalization. These findings show that using a low learning rate (1×10−5), small batch sizes with gradient accumulation, and a maximum sequence length of 4096 tokens combined with Unsloth’s 4-bit quantization and PEFT with LoRA helps the model achieve high accuracy while keeping computational costs low. Evaluation using metrics like ROUGE-L, BERT Score, BLEU, and GLEU, along with fast inference on a GPU P100, confirms that this approach delivers clear and high-quality summaries. This balance of performance and efficiency makes the solution scalable and practical for creating AI-based tools for career counseling.",
-  "keywords": [
-    "LLM Fine-Tuning",
-    "Multilingual Summarization",
-    "Open-Source LLMs",
-    "Unsloth Fine-Tuning",
-    "LLaMA",
-    "Mistral",
-    "DeepSeek"
-  ],
-  "model_evaluation": {
-    "table_2": {
-      "description": "Testing pre-trained LLMs on a custom dataset of English transcripts to identify the best performing model from each model family",
-      "columns": [
-        "Setting",
-        "Model",
-        "ROUGE (R1, R2, RL)",
-        "BERT Score (Precision, Recall, F1)",
-        "BLEU",
-        "GLEU"
-      ],
-      "settings": [
-        "0-shot inference",
-        "1-shot inference",
-        "3-shot inference"
-      ],
-      "models": [
-        "Mistral (7B)",
-        "LLaMA 3 (8B)",
-        "LLaMA 3.2 (3B)",
-        "LLaMA 3.1 (8B)",
-        "Mistral v0.3 Instruct (7B)",
-        "Deepseek LLaMA (8B)"
-      ]
-    },
-    "table_3": {
-      "description": "Performance Comparison of Fine-tuned Models on English Transcripts",
-      "columns": [
-        "Model",
-        "ROUGE-L",
-        "BERT F1",
-        "BLEU",
-        "GLEU",
-        "Inference Time"
-      ],
-      "models": [
-        "LLaMA 3.1 (8B)",
-        "Mistral v0.3 Instruct (7B)",
-        "DeepSeek LLaMA (8B)"
-      ]
-    },
-    "table_4": {
-      "description": "Multilingual Evaluation of the Fine-tuned Model",
-      "columns": [
-        "Language",
-        "BERT Score",
-        "ICE",
-        "Redundancy",
-        "Abstractivity",
-        "N-gram Ratio",
-        "Conciseness"
-      ],
-      "languages": [
-        "English",
-        "Hindi",
-        "Marathi"
-      ]
-    }
-  },
-  "fine_tuning_setup": {
-    "learning_rate": "1×10−5",
-    "batch_size": 2,
-    "gradient_accumulation_steps": 8,
-    "maximum_sequence_length": 4096,
-    "optimizer": "AdamW",
-    "gpu": "P100"
-  },
-  "references": [
-    "[1] Jay Peters. Google’s Meet teleconferencing service now adding about 3 million users per day — theverge.com. https://www.theverge.com/2020/4/28/21240434/google-meet-three-million-users-per-day-pichai-earnings. [Accessed 14-10-2024].",
-    "[2] Tom Warren. Zoom grows to 300 million meeting participants despite security backlash — theverge.com. https://www.theverge.com/2020/4/23/21232401/zoom-300-million-users-growth-coronavirus-pandemic-security-privacy-concerns-response. [Accessed 14-10-2024].",
-    "[3] Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosukhin. Attention is all you need, 2023. URL https://arxiv.org/abs/1706.03762.",
-    "[4] Md Tahmid Rahman Laskar, Xue-Yong Fu, Cheng Chen, and Shashi Bhushan TN. Building real-world meeting summarization systems using large language models: A practical perspective, 2023. URL https://arxiv.org/abs/2310.19233.",
-    "[5] Fei Ge. Fine-tune Whisper and transformer large language model for meeting summarization. PhD thesis, UCLA, 2024.",
-    "[6] Aatman Vaidya, Tarunima Prabhakar, Denny George, and Swair Shah. Analysis of indic language capabilities in llms, 2025. URL https://arxiv.org/abs/2501.13912.",
-    "[7] Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, Amy Yang, Angela Fan, Anirudh Goyal, Anthony Hartshorn, Aobo Yang, Archi Mitra, Archie Sravankumar, and et al. The llama 3 herd of models, 2024. URL https://arxiv.org/abs/2407.21783.",
-    "[8] DeepSeek-AI, Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu, Shirong Ma, Peiyi Wang, Xiao Bi, Xiaokang Zhang, Xingkai Yu, Yu Wu, Z. F. Wu, Zhibin Gou, Zhihong Shao, Zhuoshu Li, Ziyi Gao, Aixin Liu, Bing Xue, Bingxuan Wang, Bochao Wu, Bei Feng, Chengda Lu, Chenggang Zhao, Chengqi Deng, Chenyu Zhang, Chong Ruan, Damai Dai, Deli Chen, Dongjie Ji, Erhang Li, Fangyun Lin, Fucong Dai, Fuli Luo, Guangbo Hao, Guanting Chen, Guowei Li, H. Zhang, Han Bao, Hanwei Xu, Haocheng Wang, Honghui Ding, Huajian Xin, Huazuo Gao, Hui Qu, and et al. Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning, 2025. URL https://arxiv.org/abs/2501.12948.",
-    "[9] Albert Q. Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, Lélio Renard Lavaud, Marie-Anne Lachaux, Pierre Stock, Teven Le Scao, Thibaut Lavril, Thomas Wang, Timothée Lacroix, and William El Sayed. Mistral 7b, 2023. URL https://arxiv.org/abs/2310.06825.",
-    "[10] Michael Han Daniel Han and Unsloth team. Unsloth, 2023. URL http://github.com/unslothai/unsloth.",
-    "[11] Nima Sadri, Bohan Zhang, and Bihan Liu. Meetsum: Transforming meeting transcript summarization using transformers!, 2021. URL https://arxiv.org/abs/2108.06310.",
-    "[12] Sumedh S Bhat, Uzair Ahmed Nawaz, Sujay M, Nameesha Tantri, and Vani Vasudevan. Jotter: An approach to summarize the formal online meeting. In 2023 International Conference on Ambient Intelligence, Knowledge Informatics and Industrial Electronics (AIKIIE), pages 1–6, 2023. doi: 10.1109/AIKIIE60097.2023.10390455.",
-    "[13] Lakshmi Prasanna Kumar and Arman Kabiri. Meeting summarization: A survey of the state of the art, 2022. URL https://arxiv.org/abs/2212.08206.",
-    "[14] Medha Wyawahare, Madhuri Shelke, Siddharth Bhorge, and Rohit Agrawal. Ai powered multilingual meeting summarization. In 2024 14th International Conference on Cloud Computing, Data Science & Engineering (Confluence), pages 86–91, Jan 2024. doi: 10.1109/Confluence60223.2024.10463307.",
-    "[15] Aseem Srivastava, Tharun Suresh, Sarah P. Lord, Md Shad Akhtar, and Tanmoy Chakraborty. Counseling summarization using mental health knowledge guided utterance filtering. In Proceedings of the 28th ACM SIGKDD Conference on Knowledge Discovery and Data Mining, KDD ’22, page 3920–3930, New York, NY, USA, 2022. Association for Computing Machinery. ISBN 9781450393850. doi: 10.1145/3534678.3539187. URL https://doi.org/10.1145/3534678.3539187.",
-    "[16] Tianyi Zhang, Faisal Ladhak, Esin Durmus, Percy Liang, K. McKeown, and Tatsunori Hashimoto. Benchmarking large language models for news summarization. Transactions of the Association for Computational Linguistics, 12:39–57, 2023. doi: 10.1162/tacl_a_00632.",
-    "[17] Tim Dettmers, Artidoro Pagnoni, Ari Holtzman, and Luke Zettlemoyer. Qlora: Efficient finetuning of quantized llms, 2023. URL https://arxiv.org/abs/2305.14314.",
-    "[18] Edward J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, and Weizhu Chen. Lora: Low-rank adaptation of large language models, 2021. URL https://arxiv.org/abs/2106.09685.",
-    "[19] Geetanjali Singh, Namita Mittal, and Satyendra Singh Chouhan. Hindisumm: A hindi abstractive summarization benchmark dataset. ACM Trans. Asian Low-Resour. Lang. Inf. Process., 23(12), November 2024. ISSN 2375-4699. doi: 10.1145/3696207. URL https://doi.org/10.1145/3696207.",
-    "[20] Daisy Monika Lal, Paul Rayson, Krishna Pratap Singh, and Uma Shanker Tiwary. Abstractive Hindi text summarization: A challenge in a low-resource setting. In Jyoti D. Pawar and Sobha Lalitha Devi, editors, Proceedings of the 20th International Conference on Natural Language Processing (ICON), pages 603–612, Goa University, Goa, India, December 2023. NLP Association of India (NLPAI). URL https://aclanthology.org/2023.icon-1.58/.",
-    "[21] Tong Xiao and Jingbo Zhu. Foundations of large language models, 2025. URL https://arxiv.org/abs/2501.09223.",
-    "[22] Chin-Yew Lin. ROUGE: A package for automatic evaluation of summaries. In Text Summarization Branches Out, pages 74–81, Barcelona, Spain, July 2004. Association for Computational Linguistics. URL https://aclanthology.org/W04-1013/.",
-    "[23] Kishore Papineni, Salim Roukos, Todd Ward, and Wei-Jing Zhu. BLEU: a method for automatic evaluation of machine translation. In Pierre Isabelle, Eugene Charniak, and Dekang Lin, editors, Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics, pages 311–318, Philadelphia, Pennsylvania, USA, July 2002. Association for Computational Linguistics. doi: 10.3115/1073083.1073135. URL https://aclanthology.org/P02-1040/.",
-    "[24] Maxime Peyrard, Teresa Botschen, and Iryna Gurevych. Learning to score system summaries for better content selection evaluation. In Lu Wang, Jackie Chi Kit Cheung, Giuseppe Carenini, and Fei Liu, editors, Proceedings of the Workshop on New Frontiers in Summarization, pages 74–84, Copenhagen, Denmark, September 2017. Association for Computational Linguistics. doi: 10.18653/v1/W17-4510. URL https://aclanthology.org/W17-4510/.",
-    "[25] Tianyi Zhang, Varsha Kishore, Felix Wu, Kilian Q. Weinberger, and Yoav Artzi. Bertscore: Evaluating text generation with bert, 2020. URL https://arxiv.org/abs/1904.09675."
-  ]
+    "category": "OPEN",
+    "section": "NA"
 }
 ```

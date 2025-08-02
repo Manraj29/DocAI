@@ -1,33 +1,28 @@
 ```json
 {
-  "education": [
-    {
-      "Institution": "Vivekanand Education Society’s Institute of Technology",
-      "Location": "Chembur, Maharashtra",
-      "Degree": "B. E. in Computer Engineering",
-      "Start Date": "November 2022",
-      "End Date": "Present",
-      "CGPI/Result": "9.5",
-      "Details": "Technical Lead, Google Developer Students Club (GDSC), VESIT."
+    "table1": {
+        "ADMISSION FEES": "500.00",
+        "ALUMNI FEES": "500.00",
+        "CONVOCATION FEES": "250.00",
+        "DEVELOPMENT FEES": "11695.00",
+        "EXAM FEES (ODD / EVEN)": "4000.00",
+        "GYMKHANA FEES": "400.00",
+        "TUITION FEES": "54653.00",
+        "UNIVERSITY CHARGES & OTHER FEES": "146.00",
+        "YUVARAKSHA INSURANCE": "187.00",
+        "Total": "72331.00"
     },
-    {
-      "Institution": "Vivekanand Education Society’s Polytechnic",
-      "Location": "Chembur, Maharashtra",
-      "Degree": "Diploma in Computer Engineering",
-      "Start Date": "August 2019",
-      "End Date": "July 2022",
-      "CGPI/Result": "94.17%",
-      "Details": "Class Representative for 2 years."
-    },
-    {
-      "Institution": "St. Mary’s High School",
-      "Location": "Kalina Santacruz, Maharashtra",
-      "Degree": "SSC",
-      "Start Date": "June 2013",
-      "End Date": "June 2019",
-      "CGPI/Result": "76.60%",
-      "Details": null
+    "table2": {
+        "ADMISSION FEES": "500.00",
+        "ALUMNI FEES": "500.00",
+        "CONVOCATION FEES": "250.00",
+        "DEVELOPMENT FEES": "11695.00",
+        "EXAM FEES (ODD / EVEN)": "4000.00",
+        "GYMKHANA FEES": "400.00",
+        "TUITION FEES": "54653.00",
+        "UNIVERSITY CHARGES & OTHER FEES": "146.00",
+        "YUVARAKSHA INSURANCE": "187.00",
+        "Total": "72331.00"
     }
-  ]
 }
 ```
