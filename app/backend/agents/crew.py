@@ -68,7 +68,6 @@ def run_crew_pipeline(cleaned_text: str):
     rule_check_task = Task(
     description=(
         f"Here is the extracted document:\n---\n{cleaned_text}\n---\n\n"
-        # give the context of the previous task
         f"And here are the rules that this document must satisfy: {read_file('rules_result.json')} \n\n"
         f"Please validate the document against the rules. "
         f"For each rule, say whether it passed or failed, and explain why. "

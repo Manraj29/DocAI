@@ -8,7 +8,7 @@ load_dotenv()
 llm = LLM(
     model=os.getenv("GEMINI_MODEL"),
     api_key=os.getenv("GEMINI_API_KEY"),
-    temperature=0.1  # deterministic output
+    temperature=0.1
 )
 
 def get_rule_checker():

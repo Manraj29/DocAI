@@ -79,7 +79,7 @@ def render_table_flexibly(title, data):
             st.text(data)
 
         else:
-            st.write(data)  # fallback
+            st.write(data)
 
     except Exception as e:
         st.error(f"Couldn't render table `{title}`: {e}")
@@ -120,8 +120,7 @@ if uploaded_file:
     img_ocr = doc_data.get("img_ocr", [])
     img_correct_ocr = doc_data.get("img_correct_ocr", [])
 
-
-    # Display Left Column: Preview
+    # Display columns
     left_col, right_col = st.columns([1, 1.3])
     with left_col:
         st.subheader("Document Preview")
@@ -136,7 +135,7 @@ if uploaded_file:
         else:
             st.warning("Preview not supported for this format.")
 
-    # Display Extracted & Cleaned Text Tabs + All Info Tabs Together
+    # Display tabs
     with right_col:
         st.subheader("Document Content")
         content_tabs = st.tabs(["Cleaned Text", "Extracted Text", "Images", "Key-Value Pairs", "Tables"])
@@ -146,7 +145,6 @@ if uploaded_file:
 
         with content_tabs[1]:
             stx.scrollableTextbox(extracted_text, height=600, key="extracted_text")
-
 
         with content_tabs[2]:
             if images:
@@ -164,8 +162,7 @@ if uploaded_file:
             if file_ext in ["jpg", "jpeg", "png"]:
                 st.image(uploaded_file, caption="Uploaded Image", use_container_width=True)
 
-
-        # Run CrewAI if not cached
+        # Run CrewAI
         if file_name not in st.session_state.crew_outputs:
             with st.spinner("Running CrewAI agents..."):
                 crew_outputs = run_crewai(cleaned_text)
@@ -184,7 +181,6 @@ if uploaded_file:
         with content_tabs[3]:
             st.json(fields, expanded=True)
             fields = json.loads(fields)
-
 
         with content_tabs[4]:
             try:
@@ -241,8 +237,8 @@ if uploaded_file:
         else:
             st.error("Document is INVALID")
 
-
         st.divider()
+        # Custom rules
         st.subheader("Add Custom Rules")
         custom_rules = st.text_area("Enter custom rules (one per line)", height=200)
         if custom_rules:
@@ -272,9 +268,8 @@ if uploaded_file:
                 else:
                     st.error("Custom validation failed to return results.")
 
-                
-        
     st.divider()
+    # Database store
     st.subheader("📤 Store to MongoDB")
     if st.button("Store Document"):
         payload = {

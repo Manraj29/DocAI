@@ -18,8 +18,6 @@ genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 
 class GeminiLLM(LLM):
-    """LangChain-compatible wrapper around Google Gemini Pro."""
-
     model_name: str = "gemini-1.5-flash"
     temperature: float = 0.2
     _model: any = PrivateAttr()
@@ -51,8 +49,6 @@ class GeminiLLM(LLM):
     
 
 def build_rag_chain(document_text: str):
-    """Builds a Retrieval-Augmented Generation (RAG) chain using HuggingFace embeddings + Gemini Pro."""
-
     # Step 1: Split document
     splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
     chunks = splitter.split_text(document_text)
