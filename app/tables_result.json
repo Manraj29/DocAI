@@ -1,28 +1,72 @@
 ```json
 {
-    "table1": {
-        "ADMISSION FEES": "500.00",
-        "ALUMNI FEES": "500.00",
-        "CONVOCATION FEES": "250.00",
-        "DEVELOPMENT FEES": "11695.00",
-        "EXAM FEES (ODD / EVEN)": "4000.00",
-        "GYMKHANA FEES": "400.00",
-        "TUITION FEES": "54653.00",
-        "UNIVERSITY CHARGES & OTHER FEES": "146.00",
-        "YUVARAKSHA INSURANCE": "187.00",
-        "Total": "72331.00"
-    },
-    "table2": {
-        "ADMISSION FEES": "500.00",
-        "ALUMNI FEES": "500.00",
-        "CONVOCATION FEES": "250.00",
-        "DEVELOPMENT FEES": "11695.00",
-        "EXAM FEES (ODD / EVEN)": "4000.00",
-        "GYMKHANA FEES": "400.00",
-        "TUITION FEES": "54653.00",
-        "UNIVERSITY CHARGES & OTHER FEES": "146.00",
-        "YUVARAKSHA INSURANCE": "187.00",
-        "Total": "72331.00"
-    }
+  "table1": {
+    "headers": [
+      "Category",
+      "Description",
+      "Key Technologies",
+      "Examples",
+      "Challenges",
+      "Human-AI Interaction"
+    ],
+    "rows": [
+      {
+        "Category": "Autonomy Level",
+        "Description": "Degree to which the AI can operate without human input.",
+        "Key Technologies": "Planning systems, RL, LLMs + tool use",
+        "Examples": "AutoGPT, Voyager",
+        "Challenges": "Overreach, goal misalignment",
+        "Human-AI Interaction": "Requires adjustable control & oversight"
+      },
+      {
+        "Category": "Goal Orientation",
+        "Description": "How the AI sets, tracks, and refines its goals.",
+        "Key Technologies": "Goal management modules, task trees",
+        "Examples": "BabyAGI, LangChain Agents",
+        "Challenges": "Infinite loops, poor sub-goal generation",
+        "Human-AI Interaction": "Needs transparency of goal-setting"
+      },
+      {
+        "Category": "Memory Integration",
+        "Description": "Use of episodic and semantic memory for context-aware behavior.",
+        "Key Technologies": "Vector stores (e.g., FAISS, Pinecone), RAG",
+        "Examples": "ReAct, LangGraph agents",
+        "Challenges": "Hallucinated recall, memory bloat",
+        "Human-AI Interaction": "Important for continuity in long-term tasks"
+      },
+      {
+        "Category": "Tool Use",
+        "Description": "Ability to interface with external APIs, environments, or software tools.",
+        "Key Technologies": "Function calling, plugins, toolformer-like agents",
+        "Examples": "OpenAI Tools, AutoGPT + Browsing",
+        "Challenges": "Unsafe execution, API misuse",
+        "Human-AI Interaction": "Human feedback to approve or veto tool usage"
+      },
+      {
+        "Category": "Environment Interaction",
+        "Description": "Ability to perceive and act in digital or physical environments.",
+        "Key Technologies": "Simulators (e.g., Minecraft, WebArena), APIs",
+        "Examples": "Voyager (Minecraft), OpenInterpreter",
+        "Challenges": "Non-determinism, simulation fidelity",
+        "Human-AI Interaction": "Requires human-centered UI/UX design"
+      },
+      {
+        "Category": "Deliberation & Planning",
+        "Description": "Depth of reasoning before action.",
+        "Key Technologies": "Tree of Thought (ToT), Chain of Thought (CoT)",
+        "Examples": "TreeGPT, AutoGPT with planning loops",
+        "Challenges": "Shallow reasoning, inefficient planning",
+        "Human-AI Interaction": "Should support human-in-the-loop planning"
+      },
+      {
+        "Category": "Persistence",
+        "Description": "Ability to operate across time with continuity of state and memory.",
+        "Key Technologies": "Long-term memory, autonomous agents",
+        "Examples": "Agentverse, Cognosys agents",
+        "Challenges": "Memory drift, self-termination",
+        "Human-AI Interaction": "Coherent dialogue and interaction history is essential"
+      }
+    ]
+  }
 }
 ```

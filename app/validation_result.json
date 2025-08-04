@@ -2,87 +2,113 @@
 {
   "results": [
     {
-      "rule": "date_format",
+      "rule": "Title Must Not Be Empty",
       "status": "pass",
-      "reason": "Date is in dd/MM/yyyy format."
+      "reason": "Title found in the document."
     },
     {
-      "rule": "numeric",
+      "rule": "Description Must Not Be Empty",
       "status": "pass",
-      "reason": "Total amount is a valid number."
+      "reason": "Description found in the document."
     },
     {
-      "rule": "min_value",
-      "status": "pass",
-      "reason": "Total amount is greater than or equal to 0."
+      "rule": "Four Steps Must Be Present",
+      "status": "fail",
+      "reason": "The document does not have a structured 'steps' array to validate its length."
     },
     {
-      "rule": "required",
-      "status": "pass",
-      "reason": "Record number is present."
+      "rule": "Step Names Must Be Correct",
+      "status": "fail",
+      "reason": "Cannot validate step names as the document does not have a structured 'steps' array."
     },
     {
-      "rule": "required",
-      "status": "pass",
-      "reason": "Student name is present."
+      "rule": "Each Step Must Have A Description",
+      "status": "fail",
+      "reason": "Cannot validate step descriptions as the document does not have a structured 'steps' array."
     },
     {
-      "rule": "required",
+      "rule": "Fueling Agentic AI Section Must Not Be Empty",
       "status": "pass",
-      "reason": "Admission number is present."
+      "reason": "Fueling Agentic AI section found in the document."
     },
     {
-      "rule": "required",
-      "status": "pass",
-      "reason": "Student ID is present."
+      "rule": "Applications Array Must Not Be Empty",
+      "status": "fail",
+      "reason": "The document does not have a structured 'applications' array to validate."
     },
     {
-      "rule": "required",
-      "status": "pass",
-      "reason": "Amount in words is present."
+      "rule": "Each Application Must Have An Area and Description",
+      "status": "fail",
+      "reason": "Cannot validate application keys as the document does not have a structured 'applications' array."
     },
     {
-      "rule": "matches_amount",
-      "status": "pass",
-      "reason": "Amount in words matches the total amount."
+      "rule": "Key Technologies Array Must Not Be Empty",
+      "status": "fail",
+      "reason": "The document does not have a structured 'key_technologies' array to validate."
     },
     {
-      "rule": "required",
-      "status": "pass",
-      "reason": "Fees breakdown is present."
+      "rule": "Each Key Technology Must Have Category, Description, Technologies, Examples, Challenges and Human AI Interaction",
+      "status": "fail",
+      "reason": "Cannot validate key technology keys as the document does not have a structured 'key_technologies' array."
     },
     {
-      "rule": "total_matches_breakdown",
+      "rule": "Hindi Explanation Must Not Be Empty",
       "status": "pass",
-      "reason": "The sum of individual fees equals the total_amount."
+      "reason": "Hindi explanation found in the document."
     },
     {
-      "rule": "numeric",
+      "rule": "Table1 Headers Must Match Expected Values",
       "status": "pass",
-      "reason": "Bank amount is a valid number."
+      "reason": "Table headers match the expected values."
     },
     {
-      "rule": "matches_amount",
+      "rule": "Table1 Rows Must Not Be Empty",
       "status": "pass",
-      "reason": "Bank amount matches the total amount."
+      "reason": "Table rows are present in the document."
     },
     {
-      "rule": "required",
+      "rule": "Each Row In Table1 Must Have All Expected Keys",
       "status": "pass",
-      "reason": "Class is present."
-    },
-    {
-      "rule": "required",
-      "status": "pass",
-      "reason": "Sender is present."
-    },
-    {
-      "rule": "required",
-      "status": "pass",
-      "reason": "Address is present."
+      "reason": "Each row in table1 has all expected keys."
     }
   ],
-  "overall_validity": "VALID",
-  "failed rules": []
+  "overall_validity": "INVALID",
+  "failed rules": [
+    {
+      "rule": "Four Steps Must Be Present",
+      "status": "fail",
+      "reason": "The document does not have a structured 'steps' array to validate its length."
+    },
+    {
+      "rule": "Step Names Must Be Correct",
+      "status": "fail",
+      "reason": "Cannot validate step names as the document does not have a structured 'steps' array."
+    },
+    {
+      "rule": "Each Step Must Have A Description",
+      "status": "fail",
+      "reason": "Cannot validate step descriptions as the document does not have a structured 'steps' array."
+    },
+    {
+      "rule": "Applications Array Must Not Be Empty",
+      "status": "fail",
+      "reason": "The document does not have a structured 'applications' array to validate."
+    },
+    {
+      "rule": "Each Application Must Have An Area and Description",
+      "status": "fail",
+      "reason": "Cannot validate application keys as the document does not have a structured 'applications' array."
+    },
+    {
+      "rule": "Key Technologies Array Must Not Be Empty",
+      "status": "fail",
+      "reason": "The document does not have a structured 'key_technologies' array to validate."
+    },
+    {
+      "rule": "Each Key Technology Must Have Category, Description, Technologies, Examples, Challenges and Human AI Interaction",
+      "status": "fail",
+      "reason": "Cannot validate key technology keys as the document does not have a structured 'key_technologies' array."
+    }
+  ]
 }
 ```

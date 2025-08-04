@@ -14,6 +14,40 @@ import win32com
 
 pytesseract.pytesseract.tesseract_cmd = r"D:\Apps\Tesseract\tesseract.exe"
 
+def convert_to_pdf(file, extension):
+    try:
+        if extension == "docx":
+            import win32com.client as win32
+
+            # Save to temp file if input is bytes
+            if isinstance(file, bytes):
+                with tempfile.NamedTemporaryFile(delete=False, suffix=".docx") as temp_docx:
+                    temp_docx.write(file)
+                    temp_docx_path = temp_docx.name
+            else:
+                temp_docx_path = file
+
+            # Convert using MS Word
+            word = win32.Dispatch("Word.Application")
+            doc = word.Documents.Open(temp_docx_path)
+            pdf_path = temp_docx_path.replace(".docx", ".pdf")
+            doc.SaveAs(pdf_path, FileFormat=17)  # 17 = wdFormatPDF
+            doc.Close()
+            word.Quit()
+
+            with open(pdf_path, "rb") as f:
+                pdf_bytes = f.read()
+
+            # Clean up temp files
+            os.remove(temp_docx_path)
+            os.remove(pdf_path)
+
+            return pdf_bytes
+
+    except Exception as e:
+        return f"Error converting {extension} to PDF: {e}"
+
+
 def file_preprocess(file, selected_extension=None):
     final_text = ""
 
@@ -40,18 +74,12 @@ def file_preprocess(file, selected_extension=None):
         return final_text if final_text else "No text found."
 
     elif selected_extension == "docx":
-        try:
-            if isinstance(file, bytes):
-                doc = Document(io.BytesIO(file))
-            else:
-                doc = Document(file)
-            content = "\n".join([para.text for para in doc.paragraphs if para.text.strip()])
-            return content.strip()
-        
-        except Exception as e:
-            return f"Error loading DOCX: {e}"
+        pdf_bytes = convert_to_pdf(file, "docx")
+        if isinstance(pdf_bytes, bytes):
+            return file_preprocess(pdf_bytes, selected_extension="pdf")
+        else:
+            return pdf_bytes  # error message string
 
-    
     elif selected_extension == "pptx":
         try:
             import comtypes.client
@@ -137,17 +165,11 @@ def displayFile(file_path_or_bytes, selected_extension=None):
             return text.strip()
 
         elif selected_extension == "docx":
-            try:
-                if isinstance(file_path_or_bytes, bytes):
-                    doc = Document(io.BytesIO(file_path_or_bytes))  # ✅ wrap in BytesIO
-                else:
-                    doc = Document(file_path_or_bytes)  # for file paths
-                    
-                text = "\n".join([para.text for para in doc.paragraphs if para.text.strip()])
-                return text.strip()
-            except Exception as e:
-                return f"Error displaying DOCX: {e}"
-
+            pdf_bytes = convert_to_pdf(file_path_or_bytes, "docx")
+            if isinstance(pdf_bytes, bytes):
+                return pdf_embed_html(pdf_bytes)
+            else:
+                return pdf_bytes
 
         elif selected_extension == "pptx":
             try:

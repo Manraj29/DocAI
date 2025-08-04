@@ -1,0 +1,8 @@
+app/backend/validation_result.json
+app/backend/rules_result.json
+app/backend/tables_result.json
+.env
+app/backend/classification_result.txt
+app/backend/agentops.log
+
+*/__pycache__

@@ -1,89 +1,81 @@
 ```json
 {
-  "validation_rules": [
+  "documentValidationRules": [
     {
-      "field": "date",
-      "rule": "date_format",
-      "format": "dd/MM/yyyy",
-      "description": "Date must be in dd/MM/yyyy format."
+      "ruleName": "Title Must Not Be Empty",
+      "field": "title",
+      "validationType": "notEmpty"
     },
     {
-      "field": "total_amount",
-      "rule": "numeric",
-      "description": "Total amount must be a valid number."
+      "ruleName": "Description Must Not Be Empty",
+      "field": "description",
+      "validationType": "notEmpty"
     },
     {
-      "field": "total_amount",
-      "rule": "min_value",
-      "min_value": 0,
-      "description": "Total amount must be greater than or equal to 0."
+      "ruleName": "Four Steps Must Be Present",
+      "field": "steps",
+      "validationType": "arrayLength",
+      "expectedLength": 4
     },
     {
-      "field": "record_number",
-      "rule": "required",
-      "description": "Record number is required."
+      "ruleName": "Step Names Must Be Correct",
+      "field": "steps[*].name",
+      "validationType": "valuesInSet",
+      "expectedValues": ["Perceive", "Reason", "Act", "Learn"]
     },
     {
-      "field": "name",
-      "rule": "required",
-      "description": "Student name is required."
+      "ruleName": "Each Step Must Have A Description",
+      "field": "steps[*].description",
+      "validationType": "notEmpty"
     },
     {
-      "field": "admission_number",
-      "rule": "required",
-      "description": "Admission number is required."
+      "ruleName": "Fueling Agentic AI Section Must Not Be Empty",
+      "field": "fueling_agentic_ai",
+      "validationType": "notEmpty"
     },
     {
-      "field": "student_id",
-      "rule": "required",
-      "description": "Student ID is required."
+      "ruleName": "Applications Array Must Not Be Empty",
+      "field": "applications",
+      "validationType": "notEmpty"
     },
     {
-      "field": "amount_in_words",
-      "rule": "required",
-      "description": "Amount in words is required."
+      "ruleName": "Each Application Must Have An Area and Description",
+      "field": "applications[*]",
+      "validationType": "hasKeys",
+      "expectedKeys": ["area", "description", "impact"]
     },
     {
-      "field": "amount_in_words",
-      "rule": "matches_amount",
-      "field_to_match": "total_amount",
-      "description": "Amount in words must match the total amount."
+      "ruleName": "Key Technologies Array Must Not Be Empty",
+      "field": "key_technologies",
+      "validationType": "notEmpty"
     },
     {
-      "field": "fees_breakdown",
-      "rule": "required",
-      "description": "Fees breakdown is required."
+      "ruleName": "Each Key Technology Must Have Category, Description, Technologies, Examples, Challenges and Human AI Interaction",
+      "field": "key_technologies[*]",
+      "validationType": "hasKeys",
+      "expectedKeys": ["category", "description", "technologies", "examples", "challenges", "human_ai_interaction"]
     },
     {
-      "field": "fees_breakdown",
-      "rule": "total_matches_breakdown",
-      "description": "The sum of individual fees in fees_breakdown must equal the total_amount."
+      "ruleName": "Hindi Explanation Must Not Be Empty",
+      "field": "hindi_explanation",
+      "validationType": "notEmpty"
     },
     {
-      "field": "bank",
-      "rule": "numeric",
-      "description": "Bank amount must be a valid number."
+      "ruleName": "Table1 Headers Must Match Expected Values",
+      "field": "table1.headers",
+      "validationType": "arrayEquals",
+      "expectedValues": ["Category", "Description", "Key Technologies", "Examples", "Challenges", "Human-AI Interaction"]
     },
     {
-      "field": "bank",
-      "rule": "matches_amount",
-      "field_to_match": "total_amount",
-      "description": "Bank amount must match the total amount."
+      "ruleName": "Table1 Rows Must Not Be Empty",
+      "field": "table1.rows",
+      "validationType": "notEmpty"
     },
     {
-      "field": "class",
-      "rule": "required",
-      "description": "Class is required."
-    },
-     {
-      "field": "sender",
-      "rule": "required",
-      "description": "Sender is required."
-    },
-    {
-      "field": "address",
-      "rule": "required",
-      "description": "Address is required."
+      "ruleName": "Each Row In Table1 Must Have All Expected Keys",
+      "field": "table1.rows[*]",
+      "validationType": "hasKeys",
+      "expectedKeys": ["Category", "Description", "Key Technologies", "Examples", "Challenges", "Human-AI Interaction"]
     }
   ]
 }

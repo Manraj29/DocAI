@@ -1,3 +1,4 @@
+import json
 import re
 from .classifier import get_document_classifier
 from .extractor import get_field_extractor
@@ -11,19 +12,19 @@ from crewai_tools import FileWriterTool, FileReadTool
 import os
 
 
-def read_file(file_path: str) -> str:
-    tool = FileReadTool()
+def read_file(file_path: str, is_json: bool = False):
     file_path = os.path.abspath(file_path)
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"File not found: {file_path}")
 
     try:
-        result = tool._run(file_path=file_path)
-        # Ensure the content is decoded as UTF-8
-        result = result.encode('utf-8').decode('utf-8')
-        cleaned_text = re.sub(r"```[\w]*\n(.*?)```", r"\1", result, flags=re.DOTALL)
-        return cleaned_text.strip()
-    except UnicodeDecodeError as e:
+        with open(file_path, "r", encoding="utf-8") as f:
+            content = f.read()
+            cleaned_text = re.sub(r"```[\w]*\n(.*?)```", r"\1", content, flags=re.DOTALL)
+            if is_json:
+                return json.loads(cleaned_text)
+            return cleaned_text.strip()
+    except Exception as e:
         print(f"Error reading file {file_path}: {e}")
         raise
 
@@ -94,11 +95,11 @@ def run_crew_pipeline(cleaned_text: str):
     print("results: ", results)
     
     # get data from each file 
-    doc_type = read_file("classification_result.txt")
-    fields = read_file("fields_result.json")
-    tables = read_file("tables_result.json")
-    rules = read_file("rules_result.json")
-    validation_result = read_file("validation_result.json")
+    doc_type = read_file("classification_result.txt", is_json=False)
+    fields = read_file("fields_result.json", is_json=True)
+    tables = read_file("tables_result.json", is_json=True)
+    rules = read_file("rules_result.json", is_json=True)
+    validation_result = read_file("validation_result.json", is_json=True)
 
     print(doc_type, fields, tables, rules, validation_result)
     return {

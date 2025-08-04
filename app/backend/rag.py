@@ -1,5 +1,3 @@
-# rag_engine.py
-
 import os
 from dotenv import load_dotenv
 
@@ -50,7 +48,7 @@ class GeminiLLM(LLM):
 
 def build_rag_chain(document_text: str):
     # Step 1: Split document
-    splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
+    splitter = RecursiveCharacterTextSplitter(chunk_size=800, chunk_overlap=120)
     chunks = splitter.split_text(document_text)
 
     if not chunks:
@@ -66,7 +64,7 @@ def build_rag_chain(document_text: str):
     # Step 4: Build retrieval-based QA chain
     qa_chain = RetrievalQA.from_chain_type(
         llm=llm,
-        retriever=vectorstore.as_retriever(search_kwargs={"k": 1}),
+        retriever=vectorstore.as_retriever(search_kwargs={"k": 3}),
         return_source_documents=True
     )
 

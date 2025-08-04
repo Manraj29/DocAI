@@ -1,33 +1,115 @@
 ```json
 {
-    "sender": "Vivekanand Education Society's INSTITUTE OF TECHNOLOGY",
-    "address": "HASHU ADVANI MEMORIAL COMPLEX, COLLECTOR's COLONY, CHEMBUR, MUMBAI- 400074",
-    "date": "11/08/2024",
-    "record_number": "B25/BE/BN/2024-2025/1140",
-    "class": "BE (COMPUTER ENGINEERING)-7",
-    "name": "MANRAJ SINGH VIRDI",
-    "admission_number": "195",
-    "student_id": "4278480",
-    "fee_type": "EBC",
-    "roll_number": "D7B69",
-    "total_amount": "72331.00",
-    "amount_in_words": "SEVENTY TWO THOUSAND THREE HUNDRED THIRTY ONE RUPEES ONLY",
-    "medium": "ENGLISH",
-    "subject": "NA",
-    "bank": "72331.00",
-    "remarks": "NA",
-    "fees_breakdown": {
-        "ADMISSION FEES": "500.00",
-        "ALUMNI FEES": "500.00",
-        "CONVOCATION FEES": "250.00",
-        "DEVELOPMENT FEES": "11695.00",
-        "EXAM FEES (ODD / EVEN)": "4000.00",
-        "GYMKHANA FEES": "400.00",
-        "TUITION FEES": "54653.00",
-        "UNIVERSITY CHARGES & OTHER FEES": "146.00",
-        "YUVARAKSHA INSURANCE": "187.00"
+  "title": "How Does Agentic AI Work?",
+  "description": "Agentic AI uses a four-step process for problem-solving: Perceive, Reason, Act, and Learn. It leverages large language models, RAG, and external tools to automate tasks and improve decision-making.",
+  "steps": [
+    {
+      "step": 1,
+      "name": "Perceive",
+      "description": "AI agents gather and process data from various sources, such as sensors, databases, and digital interfaces. This involves extracting meaningful features, recognizing objects, or identifying relevant entities in the environment."
     },
-    "category": "OPEN",
-    "section": "NA"
+    {
+      "step": 2,
+      "name": "Reason",
+      "description": "A large language model acts as the orchestrator, or reasoning engine, that understands tasks, generates solutions, and coordinates specialized models for specific functions like content creation, visual processing, or recommendation systems. This step uses techniques like retrieval-augmented generation (RAG) to access proprietary data sources and deliver accurate, relevant outputs."
+    },
+    {
+      "step": 3,
+      "name": "Act",
+      "description": "By integrating with external tools and software via application programming interfaces, agentic AI can quickly execute tasks based on the plans it has formulated. Guardrails can be built into AI agents to help ensure they execute tasks correctly."
+    },
+    {
+      "step": 4,
+      "name": "Learn",
+      "description": "Agentic AI continuously improves through a feedback loop, or “data flywheel,” where the data generated from its interactions is fed into the system to enhance models. This ability to adapt and become more effective over time offers businesses a powerful tool for driving better decision-making and operational efficiency."
+    }
+  ],
+  "fueling_agentic_ai": "Agentic AI is fueled by enterprise data, leveraging accelerated AI query engines and RAG to enhance generative AI models. A data flywheel is created where data generated through interactions is fed back into the system, refining models and increasing their effectiveness.",
+  "applications": [
+    {
+      "area": "Customer Service",
+      "description": "AI agents are improving customer support by enhancing self-service capabilities and automating routine communications. Digital humans are also being used to offer lifelike, real-time interactions.",
+      "impact": "Significant improvements in customer interactions, reducing response times and boosting satisfaction."
+    },
+    {
+      "area": "Content Creation",
+      "description": "Agentic AI can help quickly create high-quality, personalized marketing content.",
+      "impact": "Generative AI agents can save marketers an average of three hours per content piece, allowing them to focus on strategy and innovation."
+    },
+    {
+      "area": "Software Engineering",
+      "description": "AI agents are boosting developer productivity by automating repetitive coding tasks.",
+      "impact": "It’s projected that by 2030 AI could automate up to 30% of work hours, freeing developers to focus on more complex challenges and drive innovation."
+    },
+    {
+      "area": "Healthcare",
+      "description": "AI agents can distill critical information from medical and patient data to help doctors make better-informed care decisions. They can also automate administrative tasks and provide 24/7 support to patients.",
+      "impact": "Reduces the burden of time-consuming tasks, allowing doctors to focus on developing a doctor-patient connection. Improves patient adherence to treatment plans."
+    },
+    {
+      "area": "Video analytics",
+      "description": "Enterprises and public sector organizations are developing video analytics AI agents to boost the capabilities of workforces that rely on visual information from a growing number of devices. These agents can analyze large amounts of live or archived videos, request tasks via natural language and perform complex operations like video search, summarization and visual question-answering.",
+      "impact": "Anomaly alerts, draft incident reports, improve quality control through visual inspection and enhance predictive maintenance."
+    }
+  ],
+  "key_technologies": [
+    {
+      "category": "Autonomy Level",
+      "description": "Degree to which the AI can operate without human input.",
+      "technologies": "Planning systems, RL, LLMs + tool use",
+      "examples": "AutoGPT, Voyager",
+      "challenges": "Overreach, goal misalignment",
+      "human_ai_interaction": "Requires adjustable control & oversight"
+    },
+    {
+      "category": "Goal Orientation",
+      "description": "How the AI sets, tracks, and refines its goals.",
+      "technologies": "Goal management modules, task trees",
+      "examples": "BabyAGI, LangChain Agents",
+      "challenges": "Infinite loops, poor sub-goal generation",
+      "human_ai_interaction": "Needs transparency of goal-setting"
+    },
+    {
+      "category": "Memory Integration",
+      "description": "Use of episodic and semantic memory for context-aware behavior.",
+      "technologies": "Vector stores (e.g., FAISS, Pinecone), RAG",
+      "examples": "ReAct, LangGraph agents",
+      "challenges": "Hallucinated recall, memory bloat",
+      "human_ai_interaction": "Important for continuity in long-term tasks"
+    },
+    {
+      "category": "Tool Use",
+      "description": "Ability to interface with external APIs, environments, or software tools.",
+      "technologies": "Function calling, plugins, toolformer-like agents",
+      "examples": "OpenAI Tools, AutoGPT + Browsing",
+      "challenges": "Unsafe execution, API misuse",
+      "human_ai_interaction": "Human feedback to approve or veto tool usage"
+    },
+    {
+      "category": "Environment Interaction",
+      "description": "Ability to perceive and act in digital or physical environments.",
+      "technologies": "Simulators (e.g., Minecraft, WebArena), APIs",
+      "examples": "Voyager (Minecraft), OpenInterpreter",
+      "challenges": "Non-determinism, simulation fidelity",
+      "human_ai_interaction": "Requires human-centered UI/UX design"
+    },
+    {
+      "category": "Deliberation & Planning",
+      "description": "Depth of reasoning before action.",
+      "technologies": "Tree of Thought (ToT), Chain of Thought (CoT)",
+      "examples": "TreeGPT, AutoGPT with planning loops",
+      "challenges": "Shallow reasoning, inefficient planning",
+      "human_ai_interaction": "Should support human-in-the-loop planning"
+    },
+    {
+      "category": "Persistence",
+      "description": "Ability to operate across time with continuity of state and memory.",
+      "technologies": "Long-term memory, autonomous agents",
+      "examples": "Agentverse, Cognosys agents",
+      "challenges": "Memory drift, self-termination",
+      "human_ai_interaction": "Coherent dialogue and interaction history is essential"
+    }
+  ],
+  "hindi_explanation": "एजेंटिक एआई (Agentic AI) एक प्रकार की कृत्रिम बुद्धिमत्ता है जो स्वायत्त रूप से (बिना निरंतर मानव हस्तक्षेप के) लक्ष्यों को प्राप्त करने के लिए निर्णय ले सकती है और कार्य कर सकती है। यह एआई सिस्टम केवल इनपुट-आउटपुट मशीन नहीं होती, बल्कि यह स्वयं उद्देश्यों को समझने, योजना बनाने, स्मृति का उपयोग करने और बाहरी टूल्स या वातावरण से बातचीत करने में सक्षम होती है। उदाहरण के रूप में AutoGPT, BabyAGI, और Voyager जैसे एजेंटिक एआई सिस्टम्स ने यह दिखाया है कि कैसे मशीनें जटिल कार्यों को चरणबद्ध ढंग से पूरा कर सकती हैं। हालांकि, इसके साथ कुछ चुनौतियां भी जुडी हैं, जैसे कि लक्ष्यों का गलत निर्धारण, निर्णयों में पारदर्शिता की कमी, और सुरक्षा संबंधी जोखिम। इसलिए, एजेंटिक एआई का विकास करते समय नैतिकता, पारदर्शिता और मानव नियंत्रण को प्राथमिकता देना आवश्यक है।"
 }
 ```

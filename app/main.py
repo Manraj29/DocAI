@@ -5,6 +5,7 @@ import requests
 import base64
 from PIL import Image
 import streamlit_scrollable_textbox as stx
+from backend.document_parser import convert_to_pdf
 
 BACKEND_URL = "http://localhost:8000"
 
@@ -58,8 +59,18 @@ def validate_document_with_rules(cleaned_text, rules):
 def render_table_flexibly(title, data):
     st.markdown(f"#### {title}")
     try:
-        if isinstance(data, list):
-            # List of dicts (normal table)
+        # Check if it's a header/row structured table
+        if isinstance(data, dict) and "headers" in data and "rows" in data:
+            df = pd.DataFrame(data["rows"])
+            expected_columns = data["headers"]
+
+            # Reorder and validate columns
+            if set(df.columns) == set(expected_columns):
+                df = df[expected_columns]
+            st.table(df)
+
+        elif isinstance(data, list):
+            # List of dicts (normal case)
             if all(isinstance(row, dict) for row in data):
                 df = pd.DataFrame(data)
                 st.table(df)
@@ -127,15 +138,28 @@ if uploaded_file:
     # Display columns
     left_col, right_col = st.columns([1, 1.3])
     with left_col:
+        
+        og_file_ext = file_name.split(".")[-1].lower()
         st.subheader("Document Preview")
-        if file_ext == "pdf":
+        if og_file_ext == "pdf":
             base64_pdf = base64.b64encode(uploaded_file.getvalue()).decode("utf-8")
             st.markdown(
                 f'<embed src="data:application/pdf;base64,{base64_pdf}" width="100%" height="750" type="application/pdf">',
                 unsafe_allow_html=True
             )
-        elif file_ext in ["jpg", "jpeg", "png"]:
+        elif og_file_ext in ["jpg", "jpeg", "png"]:
             st.image(uploaded_file, caption="Uploaded Image", use_container_width=True)
+        elif og_file_ext == "docx":
+            try:
+                # conveert to PDF
+                pdf_bytes = convert_to_pdf(uploaded_file.getvalue(), "docx")
+                base64_pdf = base64.b64encode(pdf_bytes).decode("utf-8")
+                st.markdown(
+                    f'<embed src="data:application/pdf;base64,{base64_pdf}" width="100%" height="750" type="application/pdf">',
+                    unsafe_allow_html=True
+                )
+            except Exception as e:
+                st.error("Error displaying docs as PDF")
         else:
             st.warning("Preview not supported for this format.")
 
@@ -187,7 +211,8 @@ if uploaded_file:
 
         with content_tabs[3]:
             st.json(fields, expanded=True)
-            fields = json.loads(fields)
+            if isinstance(fields, str):
+                fields = json.loads(fields)
 
         with content_tabs[4]:
             try:
@@ -223,67 +248,90 @@ if uploaded_file:
 
     # Valid?
     if validation_result:
-        # st.text(validation_result)
         if isinstance(validation_result, str) and validation_result.strip():
             try:
                 validation_result = json.loads(validation_result)
             except json.JSONDecodeError:
                 st.error("Failed to decode validation result. Invalid JSON format.")
+                validation_result = {}
+
+        if "rule_checkboxes" not in st.session_state:
+            st.session_state.rule_checkboxes = {}
+
+        failed_rules = validation_result.get("failed rules", []) or validation_result.get("failed_rules", [])
+        active_failed_rules = []
 
         st.subheader("Result")
-        # with st.expander("Validation Report"):
-        if not validation_result:
-            st.info("No tables found.")
-        elif isinstance(validation_result, dict):
+
+        if isinstance(validation_result, dict):
             for name, data in validation_result.items():
-                if name not in ["overall_validity"]:
+                if name not in ["overall_validity", "failed rules", "failed_rules"]:
                     if not data or data == {}:
                         st.warning(f"There are no {name}")
                     else:
                         with st.expander(f"Table: {name}"):
                             render_table_flexibly(name, data)
-            # st.json(validation_result, expanded=True)
-            check_valid = validation_result.get("overall_validity")
-            if check_valid == "VALID":
-                st.success("Document is VALID")
-            else:
-                st.error("Document is INVALID")
-        else:
-            st.warning("Issue with result format.")
 
-        st.divider()
-        # Custom rules
-        st.subheader("Add Custom Rules")
-        custom_rules = st.text_area("Enter custom rules (one per line)", height=200, key="custom_rules_input")
-        if custom_rules:
-            with st.spinner("Validating with custom rules..."):
-                # send a json with text and rules
-                custom_validation = validate_document_with_rules(cleaned_text, custom_rules.splitlines())
-                if custom_validation:
-                    st.markdown("**Custom Validation Result:**")
-                    if isinstance(validation_result, str) and validation_result.strip():
-                        try:
-                            validation_result = json.loads(validation_result)
-                        except json.JSONDecodeError:
-                            pass
-                    if not custom_validation:
-                        st.info("No tables found.")
-                    elif isinstance(custom_validation, dict):
-                        for name, data in custom_validation.items():
-                            if name not in ["overall_validity"]:
-                                if not data or data == {}:
-                                    st.warning(f"There are no {name}")
-                                else:
-                                    with st.expander(f"Table: {name}"):
-                                        render_table_flexibly(name, data)
-                    # st.json(custom_validation, expanded=True)
-                    custom_check_valid = custom_validation.get("overall_validity")
-                    if custom_check_valid == "VALID":
-                        st.success ("Custom validation passed!")
-                    else:
-                        st.error("Custom validation failed.")
+        # Show failed rules with checkboxes
+        if failed_rules:
+            st.markdown("### Failed Rules (from AI)")
+            for idx, rule in enumerate(failed_rules):
+                rule_desc = rule.get("rule", str(rule))
+                checkbox_key = f"rule_checkbox_{idx}"
+                if checkbox_key not in st.session_state.rule_checkboxes:
+                    st.session_state.rule_checkboxes[checkbox_key] = True
+
+                checked = st.checkbox(rule_desc, value=st.session_state.rule_checkboxes[checkbox_key], key=checkbox_key)
+                st.session_state.rule_checkboxes[checkbox_key] = checked
+
+                if checked:
+                    active_failed_rules.append(rule)
+
+        check_valid = "VALID" if not active_failed_rules else "INVALID"
+
+        st.markdown(f"### Final Validation Result: **`{check_valid}`**")
+
+        if check_valid == "VALID":
+            st.success("Document is VALID.")
+        else:
+            st.error("Document is INVALID.")
+    else:
+        st.warning("Issue with result format.")
+
+
+    st.divider()
+    # Custom rules
+    st.subheader("Add Custom Rules")
+    custom_rules = st.text_area("Enter custom rules (one per line)", height=200, key="custom_rules_input")
+    if custom_rules:
+        with st.spinner("Validating with custom rules..."):
+            # send a json with text and rules
+            custom_validation = validate_document_with_rules(cleaned_text, custom_rules.splitlines())
+            if custom_validation:
+                st.markdown("**Custom Validation Result:**")
+                if isinstance(validation_result, str) and validation_result.strip():
+                    try:
+                        validation_result = json.loads(validation_result)
+                    except json.JSONDecodeError:
+                        pass
+                if not custom_validation:
+                    st.info("No tables found.")
+                elif isinstance(custom_validation, dict):
+                    for name, data in custom_validation.items():
+                        if name not in ["overall_validity"]:
+                            if not data or data == {}:
+                                st.warning(f"There are no {name}")
+                            else:
+                                with st.expander(f"Table: {name}"):
+                                    render_table_flexibly(name, data)
+                # st.json(custom_validation, expanded=True)
+                custom_check_valid = custom_validation.get("overall_validity")
+                if custom_check_valid == "VALID":
+                    st.success ("Custom validation passed!")
                 else:
-                    st.error("Custom validation failed to return results.")
+                    st.error("Custom validation failed.")
+            else:
+                st.error("Custom validation failed to return results.")
 
     st.divider()
     # Database store

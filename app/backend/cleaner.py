@@ -33,8 +33,8 @@ def clean_text_with_gemini(raw_text: str) -> str:
         return f"[Gemini Cleanup Error] {str(e)}"
 
 def clean_ocr_text_with_gemini(ocr_text, image_bytes):
-    if not ocr_text.strip():
-        return "no text "
+    # if not ocr_text.strip():
+    #     return "no text "
     if isinstance(image_bytes, bytes):
         image = Image.open(io.BytesIO(image_bytes))
     else:
@@ -42,7 +42,7 @@ def clean_ocr_text_with_gemini(ocr_text, image_bytes):
 
     text = f"""
         You are a text cleaner.
-        The following text has been extracted from an image using OCR. It might not be proper so please refine and correct it. Do not hallucinate content. Do not add any additional information. Just return the text you see in the image. Do not make any changes. 
+        The following text has been extracted from an image using OCR. It might not be proper so please refine and correct it. Do not hallucinate content. Do not add any additional information. Just return the text you see in the image. Do not make any changes. If no text, then explain what the image is about.
         Extracted text:
         {ocr_text}
     """

@@ -39,7 +39,6 @@ def validate_document(input):
     response = model.generate_content(prompt)
     result_text = response.text.strip()
 
-    # Remove ```json or ``` if it's there
     result_text = re.sub(r"^```(?:json)?\n", "", result_text)
     result_text = re.sub(r"\n```$", "", result_text)
 
