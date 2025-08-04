@@ -18,7 +18,7 @@
 - Query interface powered by RAG pipeline (MiniLM + Gemini API)
 - MongoDB storage for structured document results
 - Interactive front-end using Streamlit
-- Backend APIs via Flask + FastAPI
+- Backend APIs via FastAPI
 
 ---
 
